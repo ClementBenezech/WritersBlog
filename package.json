@@ -1,0 +1,12 @@
+{
+  "name": "annewaddington",
+  "version": "1.0.0",
+  "description": "Writer's personnal Blog",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
+    "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
+  },
+  "author": "Clement Benezech",
+  "license": "ISC"
+}

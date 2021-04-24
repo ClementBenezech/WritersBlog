@@ -1,0 +1,73 @@
+.bookgrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    height: 100%;
+    width: 100%;
+    grid-gap: 0vw;
+    margin: auto;
+    /*background-color: rgb(51, 51, 51);*/
+    padding: 2vw;
+
+    /*&__element:nth-child(odd){
+        background-color: black;
+    }
+    &__element:nth-child(even){
+        background-color: rgb(218, 19, 19);
+    }*/
+    &__element {
+        overflow:visible;
+        width: 20vh;
+        height: 33vh;
+        background-color: rgb(166, 179, 255);
+        border-radius: 1vw;
+        z-index: 99;
+        &--0 {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+            & > * {
+            animation-name: element-enter;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            }
+            
+        }
+        &--1 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+        }
+        &--2 {
+            grid-row: 3 / 4;
+            grid-column: 3 / 4;
+        }
+        &--3 {
+            grid-row: 2 / 3;
+            grid-column: 4 / 5;
+        }
+        &--4 {
+            grid-row: 3 / 4;
+            grid-column: 5 / 6;
+        }
+        &--5 {
+            grid-row: 2 / 3;
+            grid-column: 6 / 7;
+        }
+        &--6 {
+            grid-row:  1 / 2;
+            grid-column: 7 / 8;
+        }
+        & > * {
+            display:none;
+        }
+
+        &__image {
+            display:block;
+            object-fit: cover;
+            height: 100%;
+            
+        }
+
+
+    }
+    
+}
