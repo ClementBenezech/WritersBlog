@@ -1,49 +1,69 @@
 @keyframes element-enter-right-90 {
     0% {
-        margin-left:90vw;
+        left: 80vw;
     }
     100% {
-        margin-left:0vw;
+        left: 0vw;
     }
     
 }
 
 @keyframes element-enter-left-90 {
     0% {
-        margin-left:-90vw;
+        right: 80vw;
     }
     100% {
-        margin-right:0vw;
+        right: 0vw;
     }
     
 }
 
-@keyframes element-enter-right-75 {
+@keyframes element-enter-right-75{
     0% {
-        margin-left:75vw;
+        left :75vw;
     }
     100% {
-        margin-left:0vw;
+        left: 0vw;
     }
     
 }
 
-@keyframes element-enter-left-75{
+@keyframes element-enter-left-75 {
     0% {
-        margin-left:-75vw;
+        right: 75vw;
     }
     100% {
-        margin-right:0vw;
+        right: 0vw;
     }
     
 }
 
-@keyframes element-enter-top-75{
+
+
+@keyframes element-enter-top-fast{
     0% {
-        margin-top:-75vw;
+        bottom: 30vw;
+    }
+
+    80% {
+        bottom:30vw;
     }
     100% {
-        margin-top:0vw;
+        bottom: 0vw;
+    }
+    
+}
+
+@keyframes element-enter-top-slow{
+    0% {
+        bottom: 30vw;
+    }
+
+    60% {
+        bottom:30vw;
+    }
+    100% {
+        bottom: 0vw;
     }
     
 }

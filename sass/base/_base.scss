@@ -2,3 +2,27 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.page-container {
+    max-width: 1920px;
+    overflow: hidden;
+    background-image: url("../../public/images/background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+}
+.main-content {
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.199);
+    border-radius: 0.2vw;
+    padding: 5vw 5vw 5vw 5vw;
+    z-index: 99;
+    box-shadow: 0 0 1vw black;
+}
+
+h1 {
+    font-family: 'Nothing You Could Do', cursive;
+    text-align: center;
+    font-size: 5vw;
+    padding-top: 0;
+}

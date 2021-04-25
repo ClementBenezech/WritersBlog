@@ -2,11 +2,12 @@
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    height: 100%;
-    width: 100%;
+    /*width: 80vw;*/
     grid-gap: 0vw;
-    margin: auto;
-    /*background-color: rgb(51, 51, 51);*/
+    box-sizing: border-box;
+    overflow: hidden;
+    position:relative;
+    /*background-color: rgb(255, 255, 255);*/
     /*padding: 2vw;*/
 
     /*&__element:nth-child(odd){
@@ -16,92 +17,98 @@
         background-color: rgb(218, 19, 19);
     }*/
     &__element {
-        overflow:visible;
-        width: 12vw;
-        height: 17vw;
+        height: 100%;
+        width: 100%;
         border-radius: 0.5vw;
+  
+        background-color: red;
+        position: relative;
+  
         /*background-color: rgb(166, 179, 255);*/
+        
+        & > * {
+            display:none;
+        }
         
         z-index: 99;
         &--0 {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
-            & > * {
+
             animation-name: element-enter-right-90;
-            animation-duration: 5s;
+            animation-duration: 4s;
             animation-fill-mode: forwards;
-            }
             
         }
         &--1 {
             grid-row: 2 / 3;
             grid-column: 2 / 3;
-            & > * {
+
                 animation-name: element-enter-right-75;
-                animation-duration: 3s;
+                animation-duration: 2s;
                 animation-fill-mode: forwards;
-                }
+          
         }
         &--2 {
             grid-row: 1 / 2;
             grid-column: 3 / 4;
-            & > * {
-                margin-top: 75vw;
-                animation-name: element-enter-top-75;
+
+
+                animation-name: element-enter-top-slow;
                 animation-duration: 3s;
-                animation-delay: 1s;
                 animation-fill-mode: forwards;
-                }
+         
         }
         &--3 {
             grid-row: 2 / 3;
             grid-column: 4 / 5;
-            & > * {
-                margin-top: 75vw;
-                animation-name: element-enter-top-75;
+
+
+                animation-name: element-enter-top-fast;
                 animation-duration: 3s;
-                animation-delay: 1.5s;
                 animation-fill-mode: forwards;
-                }
+ 
         }
         &--4 {
             grid-row: 1 / 2;
             grid-column: 5 / 6;
-            & > * {
-                margin-top: 75vw;
-                animation-name: element-enter-top-75;
+
+
+                animation-name: element-enter-top-slow;
                 animation-duration: 3s;
                 animation-fill-mode: forwards;
-                animation-delay: 1s;
-                }
+
+     
         }
         &--5 {
             grid-row: 2 / 3;
             grid-column: 6 / 7;
-            & > * {
+     
                 animation-name: element-enter-left-75;
-                animation-duration: 3s;
+                animation-duration: 2s;
                 animation-fill-mode: forwards;
-                }
+
         }
         &--6 {
             grid-row:  1 / 2;
             grid-column: 7 / 8;
-            & > * {
+  
             animation-name: element-enter-left-90;
-            animation-duration: 5s;
+            animation-duration: 4s;
             animation-fill-mode: forwards;
-            }
+ 
         }
-        & > * {
-            display:none;
-        }
+        
 
         &__image {
+ 
             display:block;
             object-fit: cover;
-            height: 100%;
-            border-radius: 1vw;
+            width: 100%;
+            height:100%;
+
+            border-radius: 0.5vw;
+            box-shadow: 0 0 1vw rgb(97, 97, 97);
         }
 
 
