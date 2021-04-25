@@ -1,13 +1,13 @@
 .bookgrid {
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     height: 100%;
     width: 100%;
     grid-gap: 0vw;
     margin: auto;
     /*background-color: rgb(51, 51, 51);*/
-    padding: 2vw;
+    /*padding: 2vw;*/
 
     /*&__element:nth-child(odd){
         background-color: black;
@@ -17,17 +17,18 @@
     }*/
     &__element {
         overflow:visible;
-        width: 20vh;
-        height: 33vh;
-        background-color: rgb(166, 179, 255);
-        border-radius: 1vw;
+        width: 12vw;
+        height: 17vw;
+        border-radius: 0.5vw;
+        /*background-color: rgb(166, 179, 255);*/
+        
         z-index: 99;
         &--0 {
             grid-row: 1 / 2;
             grid-column: 1 / 2;
             & > * {
-            animation-name: element-enter;
-            animation-duration: 3s;
+            animation-name: element-enter-right-90;
+            animation-duration: 5s;
             animation-fill-mode: forwards;
             }
             
@@ -35,26 +36,62 @@
         &--1 {
             grid-row: 2 / 3;
             grid-column: 2 / 3;
+            & > * {
+                animation-name: element-enter-right-75;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                }
         }
         &--2 {
-            grid-row: 3 / 4;
+            grid-row: 1 / 2;
             grid-column: 3 / 4;
+            & > * {
+                margin-top: 75vw;
+                animation-name: element-enter-top-75;
+                animation-duration: 3s;
+                animation-delay: 1s;
+                animation-fill-mode: forwards;
+                }
         }
         &--3 {
             grid-row: 2 / 3;
             grid-column: 4 / 5;
+            & > * {
+                margin-top: 75vw;
+                animation-name: element-enter-top-75;
+                animation-duration: 3s;
+                animation-delay: 1.5s;
+                animation-fill-mode: forwards;
+                }
         }
         &--4 {
-            grid-row: 3 / 4;
+            grid-row: 1 / 2;
             grid-column: 5 / 6;
+            & > * {
+                margin-top: 75vw;
+                animation-name: element-enter-top-75;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                animation-delay: 1s;
+                }
         }
         &--5 {
             grid-row: 2 / 3;
             grid-column: 6 / 7;
+            & > * {
+                animation-name: element-enter-left-75;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+                }
         }
         &--6 {
             grid-row:  1 / 2;
             grid-column: 7 / 8;
+            & > * {
+            animation-name: element-enter-left-90;
+            animation-duration: 5s;
+            animation-fill-mode: forwards;
+            }
         }
         & > * {
             display:none;
@@ -64,7 +101,7 @@
             display:block;
             object-fit: cover;
             height: 100%;
-            
+            border-radius: 1vw;
         }
 
 

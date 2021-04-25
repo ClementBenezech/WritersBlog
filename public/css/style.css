@@ -1,11 +1,43 @@
 /*@import "./utils/functions";*/
 /*@import "./utils/extensions";*/
-@keyframes element-enter {
+@keyframes element-enter-right-90 {
   0% {
-    padding-left: 90vw;
+    margin-left: 90vw;
   }
   100% {
-    padding-left: 0vw;
+    margin-left: 0vw;
+  }
+}
+@keyframes element-enter-left-90 {
+  0% {
+    margin-left: -90vw;
+  }
+  100% {
+    margin-right: 0vw;
+  }
+}
+@keyframes element-enter-right-75 {
+  0% {
+    margin-left: 75vw;
+  }
+  100% {
+    margin-left: 0vw;
+  }
+}
+@keyframes element-enter-left-75 {
+  0% {
+    margin-left: -75vw;
+  }
+  100% {
+    margin-right: 0vw;
+  }
+}
+@keyframes element-enter-top-75 {
+  0% {
+    margin-top: -75vw;
+  }
+  100% {
+    margin-top: 0vw;
   }
 }
 body {
@@ -21,14 +53,14 @@ body {
 /*@import "./pages/index.scss";*/
 .bookgrid {
   display: grid;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
   height: 100%;
   width: 100%;
   grid-gap: 0vw;
   margin: auto;
   /*background-color: rgb(51, 51, 51);*/
-  padding: 2vw;
+  /*padding: 2vw;*/
   /*&__element:nth-child(odd){
       background-color: black;
   }
@@ -38,10 +70,10 @@ body {
 }
 .bookgrid__element {
   overflow: visible;
-  width: 20vh;
-  height: 33vh;
-  background-color: #a6b3ff;
-  border-radius: 1vw;
+  width: 12vw;
+  height: 17vw;
+  border-radius: 0.5vw;
+  /*background-color: rgb(166, 179, 255);*/
   z-index: 99;
 }
 .bookgrid__element--0 {
@@ -49,33 +81,69 @@ body {
   grid-column: 1/2;
 }
 .bookgrid__element--0 > * {
-  animation-name: element-enter;
-  animation-duration: 3s;
+  animation-name: element-enter-right-90;
+  animation-duration: 5s;
   animation-fill-mode: forwards;
 }
 .bookgrid__element--1 {
   grid-row: 2/3;
   grid-column: 2/3;
 }
+.bookgrid__element--1 > * {
+  animation-name: element-enter-right-75;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
 .bookgrid__element--2 {
-  grid-row: 3/4;
+  grid-row: 1/2;
   grid-column: 3/4;
+}
+.bookgrid__element--2 > * {
+  margin-top: 75vw;
+  animation-name: element-enter-top-75;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-fill-mode: forwards;
 }
 .bookgrid__element--3 {
   grid-row: 2/3;
   grid-column: 4/5;
 }
+.bookgrid__element--3 > * {
+  margin-top: 75vw;
+  animation-name: element-enter-top-75;
+  animation-duration: 3s;
+  animation-delay: 1.5s;
+  animation-fill-mode: forwards;
+}
 .bookgrid__element--4 {
-  grid-row: 3/4;
+  grid-row: 1/2;
   grid-column: 5/6;
+}
+.bookgrid__element--4 > * {
+  margin-top: 75vw;
+  animation-name: element-enter-top-75;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
 }
 .bookgrid__element--5 {
   grid-row: 2/3;
   grid-column: 6/7;
 }
+.bookgrid__element--5 > * {
+  animation-name: element-enter-left-75;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
 .bookgrid__element--6 {
   grid-row: 1/2;
   grid-column: 7/8;
+}
+.bookgrid__element--6 > * {
+  animation-name: element-enter-left-90;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
 .bookgrid__element > * {
   display: none;
@@ -84,6 +152,7 @@ body {
   display: block;
   object-fit: cover;
   height: 100%;
+  border-radius: 1vw;
 }
 
 /*# sourceMappingURL=style.css.map */
