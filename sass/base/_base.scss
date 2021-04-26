@@ -1,28 +1,40 @@
 body {
     display: flex;
     flex-direction: column;
+    background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(122, 122, 122));
 }
 
 .page-container {
     max-width: 1920px;
-    overflow: hidden;
-    background-image: url("../../public/images/background.png");
-    background-repeat: no-repeat;
-    background-size: cover;
+    /*background-image: url("../../public/images/background.png");*/
+    z-index: 99;
     margin: 0 auto;
 }
 .main-content {
     box-sizing: border-box;
-    background-color: rgba(255, 255, 255, 0.199);
-    border-radius: 0.2vw;
+    background: linear-gradient(45deg,rgb(255, 255, 255), rgb(231, 231, 231));
+    border-radius: 1vw;
     padding: 5vw 5vw 5vw 5vw;
-    z-index: 99;
-    box-shadow: 0 0 1vw black;
+    width: 90%;
+    margin-top: -3vw;
+    margin: -3vw auto 2vw auto;
+    margin-top: -3vw;
+    box-shadow: 0 0 1vw white;
+    & h2 {
+        margin-bottom: 10%;
+        font-family: 'New Tegomin';
+        width: 100%;
+        border-bottom: 0.5vw solid rgb(50, 173, 255);
+        font-size: 3vw;
+        padding-bottom: 1vw;
+        text-shadow:black 0 0 0.5vw;
+    }
 }
 
 h1 {
-    font-family: 'Nothing You Could Do', cursive;
+    font-family: 'New Tegomin';
     text-align: center;
     font-size: 5vw;
     padding-top: 0;
+    text-shadow:0 0 1vw black;
 }

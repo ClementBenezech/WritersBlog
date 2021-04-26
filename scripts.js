@@ -9,7 +9,7 @@ function createDivIn($domLocation, $divId, $tag, $class)
 	return div;
 }
 
-fetch("https://cbd-strapi.herokuapp.com/aw-books")  //appel de l'api
+fetch("https://cbd-strapi.herokuapp.com/aw-books?_sort=release_date:ASC")  //appel de l'api
 .then (response =>  // Si on reçoit une réponse
 	{
 		response.json() //On la transforme en json mais c'est toujours une promise j'ai pas compris pourquoi
@@ -21,12 +21,15 @@ fetch("https://cbd-strapi.herokuapp.com/aw-books")  //appel de l'api
 				data = response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
 				currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.
 
-				postContainer = createDivIn(document.getElementById("bookgrid"), currentpost, "div", "bookgrid__element bookgrid__element--"+i);
-				postTitle = createDivIn(postContainer, "title", "div", "bookgrid__element__title");
-				postPublisher = createDivIn(postContainer, "publisher", "div", "bookgrid__element__publisher");
-				postReleaseDate = createDivIn(postContainer, "date", "div", "bookgrid__element__date");
-				postImage = createDivIn(postContainer, "image", "img", "bookgrid__element__image");
-				postContent = createDivIn(postContainer, "synopsis", "div", "bookgrid__element__synopsis");
+				postContainer = createDivIn(document.getElementById("book-list-container"), currentpost, "div", "book-list-container__element book-list-container__element--"+i);
+				postImage = createDivIn(postContainer, "image", "img", "book-list-container__element__image");
+				postTexts = createDivIn(postContainer, "text-container", "div", "book-list-container__element__text-container")
+				/*postLinks = createDivIn(postContainer, "link-container", "div", "book-list-container__element__link-container")*/
+				postTitle = createDivIn(postTexts, "title", "div", "book-list-container__element__title");
+				postPublisher = createDivIn(postTexts, "publisher", "div", "book-list-container__element__publisher");
+				postReleaseDate = createDivIn(postTexts, "date", "div", "book-list-container__element__date");
+				
+				postContent = createDivIn(postTexts, "synopsis", "div", "book-list-container__element__synopsis");
 				
 				//On insère le src de la balise image
 				postImage.src = data['images'][0]['url'];

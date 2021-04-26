@@ -57,39 +57,62 @@
 body {
   display: flex;
   flex-direction: column;
+  background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #7a7a7a);
 }
 
 .page-container {
   max-width: 1920px;
-  overflow: hidden;
-  background-image: url("../../public/images/background.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  /*background-image: url("../../public/images/background.png");*/
+  z-index: 99;
   margin: 0 auto;
 }
 
 .main-content {
   box-sizing: border-box;
-  background-color: rgba(255, 255, 255, 0.199);
-  border-radius: 0.2vw;
+  background: linear-gradient(45deg, white, #e7e7e7);
+  border-radius: 1vw;
   padding: 5vw 5vw 5vw 5vw;
-  z-index: 99;
-  box-shadow: 0 0 1vw black;
+  width: 90%;
+  margin-top: -3vw;
+  margin: -3vw auto 2vw auto;
+  margin-top: -3vw;
+  box-shadow: 0 0 1vw white;
+}
+.main-content h2 {
+  margin-bottom: 10%;
+  font-family: "New Tegomin";
+  width: 100%;
+  border-bottom: 0.5vw solid #32adff;
+  font-size: 3vw;
+  padding-bottom: 1vw;
+  text-shadow: black 0 0 0.5vw;
 }
 
 h1 {
-  font-family: "Nothing You Could Do", cursive;
+  font-family: "New Tegomin";
   text-align: center;
   font-size: 5vw;
   padding-top: 0;
+  text-shadow: 0 0 1vw black;
 }
 
 /*@import "./base/typography";*/
 /*@import "./components/buttons";*/
 .awheader {
   color: white;
-  /*background: linear-gradient(180deg, rgb(65, 65, 65) 95%, $color-background-body 100%);*/
-  height: 15vw;
+  background-image: url(../../public/images/header.png);
+  display: flex;
+  flex-direction: row;
+  height: 20vw;
+  width: 100%;
+  margin: 0 auto;
+  justify-content: center;
+  /* center items horizontally, in this case */
+  align-items: center;
+}
+.awheader img {
+  height: 5vw;
+  padding-top: 0vw;
 }
 
 /*@import "./layout/nav";*/
@@ -111,8 +134,12 @@ h1 {
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
-  /*background-color: rgb(255, 255, 255);*/
-  /*padding: 2vw;*/
+  background-color: rgba(255, 255, 255, 0.096);
+  /*background: linear-gradient(70deg, rgba(137, 208, 255), rgba(255, 255, 255));*/
+  /*box-shadow: 0 0 1vw black;*/
+  padding: 2vw;
+  border-bottom: 0.2vw solid #5da3ff;
+  border-top: 0.2vw solid #5da3ff;
   /*&__element:nth-child(odd){
       background-color: black;
   }
@@ -124,8 +151,8 @@ h1 {
   height: 100%;
   width: 100%;
   border-radius: 0.5vw;
-  background-color: red;
   position: relative;
+  display: flex;
   /*background-color: rgb(166, 179, 255);*/
   z-index: 99;
 }
@@ -185,9 +212,77 @@ h1 {
   display: block;
   object-fit: cover;
   width: 100%;
-  height: 100%;
+  height: inherit;
   border-radius: 0.5vw;
-  box-shadow: 0 0 1vw #616161;
+  /*box-shadow: 0 0 1vw rgb(97, 97, 97);*/
+}
+
+.book-list-container {
+  display: flex;
+  flex-direction: column;
+}
+.book-list-container__element {
+  width: 100%;
+  border-radius: 0.5vw;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5vw;
+  box-shadow: 0 0.2vw 0.2vw grey;
+  /*background-color: white;*/
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: wrap;
+  background: linear-gradient(120deg, white 30%, #ebebeb);
+}
+.book-list-container__element:nth-child(odd) {
+  flex-direction: row-reverse;
+  background: linear-gradient(320deg, white 30%, #ebebeb);
+}
+.book-list-container__element__image {
+  width: 15vw;
+  height: 22vw;
+  object-fit: cover;
+  object-position: left;
+  box-shadow: 0.2vw 0 1vw grey;
+}
+.book-list-container__element__text-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 70%;
+  padding: 0 3%;
+}
+.book-list-container__element__text-container > * {
+  font-family: "New Tegomin";
+}
+.book-list-container__element__link-container {
+  width: 100%;
+  height: 5vw;
+}
+.book-list-container__element__title {
+  font-size: 2vw;
+  flex-basis: max-content;
+  width: 100%;
+  margin-right: 2%;
+}
+.book-list-container__element__publisher {
+  font-size: 2vw;
+  flex-basis: max-content;
+  margin-right: 2%;
+  color: #6d6d6d;
+}
+.book-list-container__element__date {
+  font-size: 2vw;
+  flex-basis: max-content;
+  font-weight: bold;
+  color: #6d6d6d;
+}
+.book-list-container__element__synopsis {
+  font-size: 1.2vw;
+  flex-basis: max-content;
+  font-weight: bold;
+  text-align: justify;
 }
 
 /*# sourceMappingURL=style.css.map */
