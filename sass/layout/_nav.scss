@@ -1,27 +1,67 @@
 .main-menu {
     display: flex;
-    z-index: 99;
+    z-index: 98;
     margin: 0 auto;
     height: 4vw;
     margin-top: -6vw;
     width: 90%;
     border-radius: 1vw 1vw 0 0;
     justify-content: space-around;
+    overflow: visible;
+    position: relative;
 
-    
-    
-    & > * {
+    & .button-wrapper {
+        filter: drop-shadow(-1vw -1vw 1vw #ffffff);
+        position: relative;
+        &:hover {
+            & > * {
+                background-color: rgb(36, 149, 255);
+                transform: scale(1.1);
+                text-shadow: 0 0 1vw white;
+            }
+                
+            }
+        
 
-        outline: none;
-        border: none;
-        background-color: transparent;
-        font-family: 'New Tegomin';
-        color: white;
-        font-size: 2vw;
-        line-height: 2vw;
-        background-color: black;
-        border-radius: 0.5vw;
-        box-shadow: 0 0 1vw black;
-        width: 15%;
+        &:nth-child(1) {
+            top: -5vw;
+        }
+
+        &:nth-child(2) {
+            top: -4.3vw;
+        }
+
+        &:nth-child(3) {
+            top: -3.5vw;
+        }
+    
+        & > * {
+
+            outline: none;
+            border: none;
+            background: linear-gradient(0deg, black, #32adff);
+            font-family: 'Raleway';
+            color: white;
+            font-size: 1.5vw;
+            line-height: 2vw;
+            font-weight: bolder;
+            border-radius: 0.5vw;
+            width: 7vw;
+            height: 7vw;
+            display:flex;
+            justify-content:space-around;
+            align-items: center;
+            /*-webkit-clip-path: polygon(0 100%, 100% 90%, 10% 0);
+            clip-path: polygon(0 100%, 100% 90%, 10% 0);*/
+            -webkit-clip-path: circle(40%);
+            clip-path: circle(40%);
+            transition: transform 500ms ease-in-out;
+            
+        }
+    
+        }
     }
-}
+    
+    
+
+    

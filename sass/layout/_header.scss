@@ -8,9 +8,11 @@
     margin: 0 auto;
     justify-content: space-evenly; /* center items horizontally, in this case */
     align-items: center;
-    padding-bottom: 1vw;
+    padding-bottom: 7vw;
+    position:relative;
     & h1{
         font-family: "Raleway";
         border-bottom: 0.5vw solid white;
     }
+    
 }

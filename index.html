@@ -1,5 +1,7 @@
 <html>
-    <link rel="stylesheet" href="public/css/style.css">
+    <head><script src="https://kit.fontawesome.com/4966b9f0e9.js" crossorigin="anonymous"></script> </head>
+      
+<link rel="stylesheet" href="public/css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap" rel="stylesheet"> 
 <link href="https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap" rel="stylesheet">
@@ -7,29 +9,44 @@
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=League+Script&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet"> 
+<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap" rel="stylesheet">
 <body>
+    <div class="load-screen">
+        <div class="loader-spinner"></div>
+        <div class= "loader-label"><p>AW</p></div>         
+    </div>
+    
     <header class = "awheader">
         <div class = "logo">AW</div>
         <h1>Anne Waddington</h1>
-        
     </header>
     <!--<div class = "page-container">-->
     <nav class = "main-menu">
-        <button id="blog-posts">Blog</button>
-        <button id="book-list">Ouvrages</button>
-        <button id="book-list">L'auteur</button>
+        <div class="button-wrapper">
+            <button id="blog-posts">blog</button>
+        </div>
+        
+        <div class="button-wrapper">
+        <button id="book-list">livres</button>
+        </div>
+        
+        <div class="button-wrapper">
+            <button id="author">l'auteur</button>
+        </div>
     </nav>      
         
         
         <div id = "main-content" class= 'main-content'>
             
-            <!--<div id="book-list-container" class ="book-list-container">
 
-            </div>-->
+
+
         </div>
-        <footer class ="awfooter"></footer>
-    <!--</div>-->
+        <footer class ="awfooter">
+            <i class="fab fa-facebook"></i>
+            <i class="fas fa-paper-plane"></i>
+        </footer>
+
     </body>
-    <script src="scripts.js"></script>
+    <script src="public/scripts/scripts.js"></script>
 </html>

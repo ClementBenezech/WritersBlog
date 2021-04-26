@@ -8,5 +8,8 @@
     "prefix": "postcss ./public/css/style.css --use autoprefixer -d ./public/css/prefixed/"
   },
   "author": "Clement Benezech",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "postcss": "^8.2.13"
+  }
 }

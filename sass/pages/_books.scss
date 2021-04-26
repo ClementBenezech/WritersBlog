@@ -119,7 +119,7 @@
     
 }
 
-.book-list-container {
+.book {
     display: flex;
     flex-direction: column;
     
@@ -153,12 +153,12 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
-                width: 70%;
-                padding: 0 3%;
-               
+                width: 77%;
+                padding: 1% 1%;
             & > * {
                 
-                font-family: 'New Tegomin'
+                font-family: 'Raleway';
+                font-weight: bolder;
                 
             }
             
@@ -174,6 +174,7 @@
             flex-basis: max-content;
             width: 100%;
             margin-right: 2%;
+           
         }
 
         &__publisher {
@@ -191,7 +192,7 @@
         }
 
         &__synopsis {
-            font-size: 1.2vw;
+            font-size: 1.5vw;
             flex-basis: max-content;
             font-weight: bold;
             text-align: justify;
