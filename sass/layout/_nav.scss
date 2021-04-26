@@ -1,0 +1,27 @@
+.main-menu {
+    display: flex;
+    z-index: 99;
+    margin: 0 auto;
+    height: 4vw;
+    margin-top: -6vw;
+    width: 90%;
+    border-radius: 1vw 1vw 0 0;
+    justify-content: space-around;
+
+    
+    
+    & > * {
+
+        outline: none;
+        border: none;
+        background-color: transparent;
+        font-family: 'New Tegomin';
+        color: white;
+        font-size: 2vw;
+        line-height: 2vw;
+        background-color: black;
+        border-radius: 0.5vw;
+        box-shadow: 0 0 1vw black;
+        width: 15%;
+    }
+}

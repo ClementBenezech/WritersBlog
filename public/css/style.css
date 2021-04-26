@@ -57,7 +57,7 @@
 body {
   display: flex;
   flex-direction: column;
-  background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #7a7a7a);
+  background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #030303);
 }
 
 .page-container {
@@ -73,9 +73,7 @@ body {
   border-radius: 1vw;
   padding: 5vw 5vw 5vw 5vw;
   width: 90%;
-  margin-top: -3vw;
-  margin: -3vw auto 2vw auto;
-  margin-top: -3vw;
+  margin: -2vw auto 2vw auto;
   box-shadow: 0 0 1vw white;
 }
 .main-content h2 {
@@ -85,15 +83,35 @@ body {
   border-bottom: 0.5vw solid #32adff;
   font-size: 3vw;
   padding-bottom: 1vw;
-  text-shadow: black 0 0 0.5vw;
+  text-shadow: #666666 0.2vw 0.2vw 0.2vw;
 }
 
 h1 {
-  font-family: "New Tegomin";
+  font-family: "League Script";
   text-align: center;
-  font-size: 5vw;
+  font-size: 8vw;
   padding-top: 0;
-  text-shadow: 0 0 1vw black;
+  text-shadow: 0.5vw 0.5vw 0.5vw black;
+  display: flex;
+  justify-content: center;
+  /* center items horizontally, in this case */
+  align-items: center;
+}
+
+.logo {
+  height: 10vw;
+  width: 10vw;
+  border-radius: 50%;
+  font-size: 5vw;
+  line-height: 5vw;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.493));
+  border: 0.3vw solid white;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  /* center items horizontally, in this case */
+  align-items: center;
+  font-family: "Raleway";
 }
 
 /*@import "./base/typography";*/
@@ -103,19 +121,43 @@ h1 {
   background-image: url(../../public/images/header.png);
   display: flex;
   flex-direction: row;
-  height: 20vw;
+  height: 25vw;
   width: 100%;
   margin: 0 auto;
-  justify-content: center;
+  justify-content: space-evenly;
   /* center items horizontally, in this case */
   align-items: center;
+  padding-bottom: 1vw;
 }
-.awheader img {
-  height: 5vw;
-  padding-top: 0vw;
+.awheader h1 {
+  font-family: "Raleway";
+  border-bottom: 0.5vw solid white;
 }
 
-/*@import "./layout/nav";*/
+.main-menu {
+  display: flex;
+  z-index: 99;
+  margin: 0 auto;
+  height: 4vw;
+  margin-top: -6vw;
+  width: 90%;
+  border-radius: 1vw 1vw 0 0;
+  justify-content: space-around;
+}
+.main-menu > * {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  font-family: "New Tegomin";
+  color: white;
+  font-size: 2vw;
+  line-height: 2vw;
+  background-color: black;
+  border-radius: 0.5vw;
+  box-shadow: 0 0 1vw black;
+  width: 15%;
+}
+
 /*@import "./layout/container";*/
 /*@import "./layout/form";*/
 .awfooter {

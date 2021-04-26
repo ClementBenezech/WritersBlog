@@ -1,7 +1,7 @@
 body {
     display: flex;
     flex-direction: column;
-    background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(122, 122, 122));
+    background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(3, 3, 3));
 }
 
 .page-container {
@@ -16,9 +16,7 @@ body {
     border-radius: 1vw;
     padding: 5vw 5vw 5vw 5vw;
     width: 90%;
-    margin-top: -3vw;
-    margin: -3vw auto 2vw auto;
-    margin-top: -3vw;
+    margin: -2vw auto 2vw auto;
     box-shadow: 0 0 1vw white;
     & h2 {
         margin-bottom: 10%;
@@ -27,14 +25,32 @@ body {
         border-bottom: 0.5vw solid rgb(50, 173, 255);
         font-size: 3vw;
         padding-bottom: 1vw;
-        text-shadow:black 0 0 0.5vw;
+        text-shadow:rgb(102, 102, 102) 0.2vw 0.2vw 0.2vw;
     }
 }
 
 h1 {
-    font-family: 'New Tegomin';
+    font-family: 'League Script';
     text-align: center;
-    font-size: 5vw;
+    font-size: 8vw;
     padding-top: 0;
-    text-shadow:0 0 1vw black;
+    text-shadow: 0.5vw 0.5vw 0.5vw black;
+    display: flex;
+    justify-content: center; /* center items horizontally, in this case */
+    align-items: center;
+}
+
+.logo {
+    height: 10vw;
+    width: 10vw;
+    border-radius: 50%;
+    font-size: 5vw;
+    line-height: 5vw;
+    background: linear-gradient(black, rgba(0, 0, 0, 0.493));
+    border: 0.3vw solid white;
+    vertical-align: middle;
+    display: flex;
+    justify-content: center; /* center items horizontally, in this case */
+    align-items: center;
+    font-family: "Raleway";
 }

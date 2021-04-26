@@ -3,18 +3,14 @@
     background-image: url(../../public/images/header.png);
     display:flex;
     flex-direction: row;
-    height: 20vw;
+    height: 25vw;
     width: 100%;
     margin: 0 auto;
-    justify-content: center; /* center items horizontally, in this case */
+    justify-content: space-evenly; /* center items horizontally, in this case */
     align-items: center;
+    padding-bottom: 1vw;
     & h1{
-
-    }
-
-    & img {
-        height: 5vw;
-        padding-top: 0vw;
-        
+        font-family: "Raleway";
+        border-bottom: 0.5vw solid white;
     }
 }
