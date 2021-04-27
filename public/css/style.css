@@ -107,8 +107,7 @@
 }
 @keyframes increase-padding-top {
   to {
-    padding-bottom: 1vw;
-    height: 5vw;
+    /*height: 5vw;*/
     margin-top: -1vw;
   }
 }
@@ -334,7 +333,7 @@ body {
   margin: 0 auto;
   height: 4vw;
   margin-top: -7vw;
-  width: 40%;
+  width: 50%;
   justify-content: space-around;
   overflow: visible;
   position: relative;
@@ -344,37 +343,42 @@ body {
   position: relative;
 }
 .main-menu .button-wrapper:hover > * {
-  background-color: #2495ff;
+  transform-origin: bottom;
   animation: increase-padding-top 500ms ease-in-out forwards;
-  text-shadow: 0 0 1vw white;
-  height: 6vw;
+  text-shadow: 0 0 1vw rgba(255, 255, 255, 0.651);
+}
+.main-menu .button-wrapper:hover i {
+  color: #4c92fa;
 }
 .main-menu .button-wrapper:nth-child(1) {
-  top: -1vw;
+  top: -1.5vw;
 }
 .main-menu .button-wrapper:nth-child(1) > * {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #43ff32);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #ffa600);
 }
 .main-menu .button-wrapper:nth-child(2) {
-  top: -0.5vw;
+  top: -1vw;
 }
 .main-menu .button-wrapper:nth-child(2) > * {
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #ff3232);
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #ffa600);
 }
 .main-menu .button-wrapper:nth-child(3) {
-  top: 0vw;
+  top: -0.5vw;
+}
+.main-menu .button-wrapper:nth-child(3) > * {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #ffa600);
 }
 .main-menu .button-wrapper > * {
   outline: none;
   border: none;
-  background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #32adff);
+  /*background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #32adff);*/
   font-family: "Raleway";
   color: white;
   font-size: 1.5vw;
   line-height: 2vw;
   font-weight: bolder;
-  width: 7vw;
-  height: 4vw;
+  width: 9vw;
+  height: 5vw;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -656,11 +660,14 @@ body {
   height: 15vw;
   width: 15vw;
   object-fit: cover;
+  box-shadow: 0.2vw 0.2vw 1vw black;
+  border: 0.2vw solid white;
 }
 .author__container p {
   font-family: "Raleway";
   font-size: 2vw;
   line-height: 3vw;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */
