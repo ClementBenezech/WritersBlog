@@ -16,32 +16,36 @@ body {
     padding: 5vw 3vw 3vw 5vw;
     overflow: visible;
     width: 90%;
-    margin: -6vw auto -7vw auto;
+    margin: -3vw auto -7vw auto;
     box-shadow: 0 0 1vw white;
     z-index: 2;
     -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
     clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3vw, 0 0);
     & h2 {
-        margin-bottom: 10%;
-        font-family: 'Raleway';
-        width: 100%;
-        border-bottom: 0.5vw solid rgb(50, 173, 255);
-        font-size: 3vw;
-        padding-bottom: 1vw;
-        text-shadow:rgb(102, 102, 102) 0.2vw 0.2vw 0.2vw;
-    }
+      max-width: 40%;
+      border-bottom: 0.2vw solid rgb(50, 173, 255);
+      font-family:"Raleway";
+      margin-left: 2%;
 
+    }
+  &__title {
+    display:flex;
+    flex-direction:row;
+    align-items: center;
+    justify-content: flex-start;
+    & > * {
+      
+
+        
+        font-size: 3vw;
+        text-shadow:rgb(102, 102, 102) 0.2vw 0.2vw 0.2vw;
+      
+    }
+  }
 }
 
 h1 {
-    font-family: 'League Script';
-    text-align: center;
-    font-size: 8vw;
-    padding-top: 0;
-    text-shadow:  0.1vw 0.1vw 0.8vw black;
-    display: flex;
-    justify-content: center; /* center items horizontally, in this case */
-    align-items: center;
+    
 }
 
 .logo {
@@ -57,6 +61,8 @@ h1 {
     justify-content: center; /* center items horizontally, in this case */
     align-items: center;
     font-family: "Raleway";
+    margin-right: 1vw;
+    margin-top : 2vw;
 }
 
 .load-screen {
@@ -106,6 +112,55 @@ h1 {
       opacity: 0;
       animation: fade-in-rotate 4s;
       animation-fill-mode: forwards;
+    }
+  }
+
+
+  //loader used inside main content if the api takes some time to respond
+  .load-block {
+    background-color: transparent;
+    z-index: $maximum-index;
+    height: 30vw;
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  .loader-spinner-block {
+    @include loader-element-block;
+    border-top: 2vh solid $color-secondary;
+    border-bottom: 2vh solid $color-secondary;
+    border-left: 2vh solid white;
+    border-right: 2vh solid white;
+    animation: spin 2s linear 2;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    width: 20vh;
+    height: 20vh;
+    
+  }
+  
+  .loader-label-block {
+    @include loader-element-block;
+    display: flex;
+    border-radius: 50%;
+    border: 2vh solid transparent;
+    width: 20vh;
+    height: 20vh;
+    font-family: "Shrikhand", sans-serif;
+    font-weight: 900;
+    font-size: 3vh;
+    background-color: transparent;
+    color:white;
+    font-family: "Raleway";
+    font-size: 5vw;
+    p {
+      margin: auto;
+      opacity: 0;
+      animation: fade-in-rotate 4s;
+      animation-fill-mode: forwards;
+      animation-iteration-count: infinite;
     }
   }
 

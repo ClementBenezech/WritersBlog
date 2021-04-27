@@ -122,3 +122,11 @@
       opacity: 1;
     }
   }
+
+  @keyframes increase-padding-top {
+    to {
+      padding-bottom: 1vw;
+      height: 5vw;
+      margin-top: -1vw;
+    }
+    }

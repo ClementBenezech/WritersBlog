@@ -1,11 +1,11 @@
 .main-menu {
     display: flex;
-    z-index: 98;
+    z-index: 1;
     margin: 0 auto;
     height: 4vw;
-    margin-top: -6vw;
-    width: 90%;
-    border-radius: 1vw 1vw 0 0;
+    margin-top: -7vw;
+    width: 40%;
+
     justify-content: space-around;
     overflow: visible;
     position: relative;
@@ -16,46 +16,53 @@
         &:hover {
             & > * {
                 background-color: rgb(36, 149, 255);
-                transform: scale(1.1);
+                animation: increase-padding-top 500ms ease-in-out forwards;
                 text-shadow: 0 0 1vw white;
+                height: 6vw;
             }
                 
             }
         
 
         &:nth-child(1) {
-            top: -5vw;
+            top: -1vw;
+            & > * {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #43ff32);
+            }
         }
 
         &:nth-child(2) {
-            top: -4.3vw;
+            top: -0.5vw;
+            & > * {
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #ff3232);
+            }
         }
 
         &:nth-child(3) {
-            top: -3.5vw;
+            top: -0vw;
         }
     
         & > * {
 
             outline: none;
             border: none;
-            background: linear-gradient(0deg, black, #32adff);
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), #32adff);
             font-family: 'Raleway';
             color: white;
             font-size: 1.5vw;
             line-height: 2vw;
             font-weight: bolder;
-            border-radius: 0.5vw;
             width: 7vw;
-            height: 7vw;
+            height: 4vw;
             display:flex;
             justify-content:space-around;
             align-items: center;
             /*-webkit-clip-path: polygon(0 100%, 100% 90%, 10% 0);
             clip-path: polygon(0 100%, 100% 90%, 10% 0);*/
-            -webkit-clip-path: circle(40%);
-            clip-path: circle(40%);
-            transition: transform 500ms ease-in-out;
+  
+           /* transition: height transform 500ms ease-in-out;*/
+           -webkit-clip-path: polygon(0 20%, 0 100%, 100% 100%, 100%  0);
+           clip-path: polygon(0 20%, 0 100%, 100% 100%, 100% 0);
             
         }
     

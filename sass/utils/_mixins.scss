@@ -8,3 +8,13 @@
     margin-top: 36vh;
     margin-bottom: auto;
   }
+
+  @mixin loader-element-block {
+    position: absolute;
+    box-sizing: content-box;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+  }

@@ -1,18 +1,33 @@
 .awheader {
     color: white;
+    box-sizing:border-box;
     background-image: url(../../public/images/header.png);
     display:flex;
     flex-direction: row;
-    height: 25vw;
+    height: 17vw;
     width: 100%;
     margin: 0 auto;
-    justify-content: space-evenly; /* center items horizontally, in this case */
-    align-items: center;
+    justify-content: space-between; /* center items horizontally, in this case */
+    align-items: flex-start;
     padding-bottom: 7vw;
+    padding-left: 5vw;
+    padding-right: 5vw;
     position:relative;
     & h1{
         font-family: "Raleway";
-        border-bottom: 0.5vw solid white;
+        border-bottom: 0.1vw solid white;
+        font-size: 4vw;
+        width: 78vw;
+        align-items: flex-start;
+
+    text-align: start;
+
+    padding-top: 0;
+    text-shadow:  0.1vw 0.1vw 0.8vw black;
+    display: flex;
+    justify-content: flex-start; /* center items horizontally, in this case */
+    align-items: center;
+        
     }
     
 }

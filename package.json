@@ -10,6 +10,7 @@
   "author": "Clement Benezech",
   "license": "ISC",
   "dependencies": {
-    "postcss": "^8.2.13"
+    "postcss": "^8.2.13",
+    "sass": "^1.32.11"
   }
 }
