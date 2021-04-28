@@ -1,21 +1,86 @@
 .blog {
-    display: flex;
-    flex-direction: column;
+    &__title-container {
+        display: flex;
+        flex-direction:row;
+        height: 100%;
+        border-right: 0.2vw solid $color-button-blog;
+        align-content: flex-start;
+        flex-wrap:wrap;
+        width: 15vw;
+
+
+        & h2 {
+            margin: 0;
+            padding: 0;
+            font-size: 1.5vw;
+            line-height: 1.5rem;
+            border-bottom: 0.2vw solid $color-button-blog;
+            width: 75%;
+            padding-left:5%;
+            text-align: center;
+        }
+        & i {
+            border-bottom: 0.2vw solid $color-button-blog;
+            width: 20%;
+            font-size: 1.5rem;
+            line-height: 1.5rem;
+            text-align: right;
+        }
+    }
+
+    &__posts-container {
+        width:100%;
+        margin-left: 1%;
+    }
+    &__post-filters
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        align-items:center;
+  
+        & i {
+            box-sizing:border-box;
+            display:flex;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5rem;
+            transition: transform 100ms ease-in-out;
+            width:3vw;
+            height:3vw;
+            align-items:center;
+            justify-content:center;
+            color: rgb(21, 151, 202);
+            box-shadow:0.2vw 0.2vw 0.2vw lightgrey;
+            padding: 3vw;
+            margin-top: 2vw;
+            font-size: 3vw;
+            border: 0.1rem solid rgb(21, 151, 202);
+            &:hover {
+                transform: scale(1.02);
+                color: $color-button-blog;
+            }
+        }
+    }
     
     
     &__element {
         width: 100%;
         position: relative;
         right: 0vw;
+        float: right;
         
-        margin-bottom: 5vw;
-        
+        background-color: white;
+        margin-bottom: 1rem;
         /*background-color: white;*/
  
         flex-wrap: wrap;
-        transition: transform 330ms ease-in-out;
+        /*transition: transform 200ms ease-in-out;*/
         &:hover {
-            transform: scale(1.02)
+            
+            transform-origin: top left;
+            animation: to-primary 1s ease-in-out forwards;
+
         }
         
         &:nth-child(odd) {
@@ -34,7 +99,8 @@
             margin-right: 2vw;
             border-radius: 50%;
             margin-left:-3vw;
-            margin-top: -1.5vw;
+            margin-top: -3vw;
+            z-index: 2;
         }
                 
    
@@ -44,14 +110,17 @@
         
 
         &__title {
-            font-size: 3vw;
+            font-size: 2rem;
             flex-basis: max-content;
             width: 100%;
             margin-right: 2%;
-            background-color: rgb(37, 168, 255);
-            background: linear-gradient(90deg,rgb(37, 168, 255), white);
-            box-shadow: 0.2vw 0.2vw 0.2vw rgb(182, 182, 182);
+            border-top: 0.2vw solid $color-button-blog;
+
+            /*background: linear-gradient(90deg,rgb(37, 168, 255), white);*/
+            box-shadow: 0.2vw 0.2vw 0.4vw rgb(212, 211, 211);
             font-family: 'Raleway';
+
+            z-Index: 1;
         }
 
         &__publisher {
@@ -62,24 +131,43 @@
        
         }
         &__date {
-            font-size: 2vw;
+            font-size: 1vw;
             font-weight: 100;
             color:rgb(109, 109, 109);
-            font-family: 'Raleway';
-            margin: 2vw 0;
+            font-family: 'Lato';
+            text-align:end;
+            background-color: $color-button-blog;
+            width: 20%;
+            margin-left: 80%;
+            color:white;
+            font-weight: bold;
+            text-align:center;
         }
 
         &__synopsis {
-            font-size: 2vw;
-            line-height: 3vw;
-            font-weight: bold;
+            font-size: 1.5rem;
+            line-height: 2rem;
+   
             text-align: justify;
             padding: 2vw 2vw 2vw 2vw;
-            font-family: 'Raleway';
+            font-family: 'Lato';
             background-color: white;
+
+            background: rgb(255,255,255);
+
             text-overflow: ellipsis;
-            box-shadow: 0.2vw 0.2vw 0.2vw rgb(182, 182, 182);
+            box-shadow: 0.2vw 0.2vw 0.4vw rgb(212, 211, 211);
+            white-space: pre-line;
+            white-space: pre-wrap;
+            background: linear-gradient(180deg, #eaeaea 10%,  white 90%);
+            text-shadow: 0.1vw 0.1vw 0.3vw white;
             
         }
     }
+}
+
+.post-filters {
+    display: flex;
+    justify-content: space-around;
+    align-items:center;
 }

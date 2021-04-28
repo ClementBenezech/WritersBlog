@@ -18,13 +18,15 @@ function deleteMainContent() {
 
 function createTitle($contentType, $icon) {
 	sectionTitle = createDivIn(document.getElementById("main-content"), "title", "div", "main-content__title");
-	sectionTitle.innerHTML = $icon+"<h2>"+$contentType+"</h2>";
+	sectionTitle.innerHTML = "<div id ='blog__title-container' class = 'blog__title-container'>"
+	+$icon
+	+"<h2>"+$contentType+"</h2> <div id='post-filters'class='blog__post-filters'><i class='fas fa-book'></i> <i class='fab fa-hotjar'></i> <i class='fas fa-signature'></i></div></div>";
 	
 
 }
 
 function getBlogPost($id) {
-
+	window.scrollTo(0,0);
 	console.log("t'as cliqué mon buddy"+$id);
 	console.log(strapiURL+"aw-blogposts/"+$id);
 	fetch(strapiURL+"aw-blogposts/"+$id)  //appel de l'api
@@ -68,7 +70,7 @@ function getBlogPost($id) {
 
 function aboutContent (){
 	deleteMainContent();
-	createTitle("A propos de l'auteure", "<i class='fas fa-user-astronaut'></i>");
+	createTitle("L'auteur", "<i class='fas fa-fingerprint'></i>");
 
 		postContainer = createDivIn(document.getElementById("main-content"), "authorContainer", "div", "author__container");
 		postContainer.innerHTML= "<img src='public/images/AW_profile.jpg'><p>Anne Waddington, auteure prolifique, partage son temps entre Toulouse et les Monts de Lacaune. </p><p> Elle aime revisiter l'Histoire et mettre en lumière, tant dans ses romans que dans ses thrillers, des éléments du passé dont les manuels évitent de parler . </p><p>Son style enlevé, la justesse de ses personnages et sa façon de distiller le suspens vous emportent jusqu'à des dénouements saisissants et inattendus. </p><p>Anciennement psychologue et thérapeute familial, la retraite lui permet de se consacrer à l'écriture et au théâtre.</p>";
@@ -87,13 +89,16 @@ function getBookList()
 					
 					deleteMainContent();
 					createTitle("Bibliographie", "<i class='fas fa-book'></i>");
+					booksContainer = createDivIn(document.getElementById("main-content"), "book__books-container", "div", "book__books-container");
 
 					for (i = 0; i < Object.keys(response).length; i++)
 					{
 						data = response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
 						currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.
 		
-						postContainer = createDivIn(document.getElementById("main-content"), currentpost, "div", "book__element book__element--"+i);
+						
+						
+						postContainer = createDivIn(booksContainer, currentpost, "div", "book__element");
 						postImage = createDivIn(postContainer, "image", "img", "book__element__image");
 						postTexts = createDivIn(postContainer, "text-container", "div", "book__element__text-container")
 						postTitle = createDivIn(postTexts, "title", "div", "book__element__title");
@@ -107,7 +112,7 @@ function getBookList()
 		
 						/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
 						postTitle.textContent = data['title'];
-						postContent.textContent = data['synopsis'];
+						postContent.innerHTML = data['synopsis'];
 						postPublisher.textContent = data['publisher'];
 						postReleaseDate.textContent = data['release_date'].substring(0, 4);
 						console.log(toString(data['release_date']));
@@ -128,14 +133,14 @@ function getPostList() {
 
 						deleteMainContent();
 						createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
-		
+						postsContainer = createDivIn(document.getElementById("main-content"), "blog__posts-container", "div", "blog__posts-container");
 					/*console.log("contenu de response: "+response);*/
 					for (i = 0; i < Object.keys(response).length; i++)
 					{
 						const data = response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
 						/*currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.*/
 						
-						postContainer = createDivIn(document.getElementById("main-content"), data['id'], "div", "blog__element blog__element--"+i);
+						postContainer = createDivIn(postsContainer, data['id'], "div", "blog__element blog__element--"+i);
 
 						postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
 						postImage = createDivIn(postContainer, "image", "img", "blog__element__image");

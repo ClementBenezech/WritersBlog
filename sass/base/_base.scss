@@ -20,9 +20,11 @@ body {
     box-shadow: 0 0 1vw white;
     z-index: 2;
     -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
-    clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3vw, 0 0);
+    clip-path: polygon(0 0, 3vw 100%, 100% 98%, 100% 3vw, 0 0);
+    display: flex;
+    flex-direction: row;
     & h2 {
-      max-width: 40%;
+      /*max-width: 40%;*/
       border-bottom: 0.2vw solid rgb(50, 173, 255);
       font-family:"Raleway";
       margin-left: 2%;
@@ -32,7 +34,7 @@ body {
     display:flex;
     flex-direction:row;
     align-items: center;
-    justify-content: flex-start;
+    
     & > * {
       
 

@@ -130,3 +130,16 @@
       margin-top: -1vw;
     }
     }
+
+    @keyframes to-primary {
+      100% {
+        transform: scale(1.01);
+      }
+  }
+
+  @keyframes to-origin {
+    100% {
+      background-color: $color-background-body;
+      transform: scale(1.0);
+    }
+}
