@@ -2,6 +2,13 @@ const strapiURL = 'https://cbd-strapi.herokuapp.com/';
 let postContainer = new Array(20);
 let i = 0;
 
+/* to create a div with based on parameters:
+				Parent div
+				Id of the div to create
+				type of div to create
+				css class for the div
+				*/
+
 function createDivIn($domLocation, $divId, $tag, $class)
 		{
 			div = document.createElement($tag); //on crée un nouveau div
@@ -11,19 +18,14 @@ function createDivIn($domLocation, $divId, $tag, $class)
 			return div;
 		}
 
+// To clear main content before reloading requested content.
+
 function deleteMainContent() {
 	previousContent = document.getElementById("main-content");
 	previousContent.textContent = "";
 }
 
-function createTitle($contentType, $icon) {
-	sectionTitle = createDivIn(document.getElementById("main-content"), "title", "div", "main-content__title");
-	sectionTitle.innerHTML = "<div id ='blog__title-container' class = 'blog__title-container'>"
-	+$icon
-	+"<h2>"+$contentType+"</h2> <div id='post-filters'class='blog__post-filters'><i class='fas fa-book'></i> <i class='fab fa-hotjar'></i> <i class='fas fa-signature'></i></div></div>";
-	
 
-}
 
 function getBlogPost($id) {
 	window.scrollTo(0,0);
@@ -69,11 +71,17 @@ function getBlogPost($id) {
 }
 
 function aboutContent (){
-	deleteMainContent();
-	createTitle("L'auteur", "<i class='fas fa-fingerprint'></i>");
+	fadeContentOutIn ();
+	setTimeout(function() {generateAboutContent()}, 500);
+}
 
-		postContainer = createDivIn(document.getElementById("main-content"), "authorContainer", "div", "author__container");
-		postContainer.innerHTML= "<img src='public/images/AW_profile.jpg'><p>Anne Waddington, auteure prolifique, partage son temps entre Toulouse et les Monts de Lacaune. </p><p> Elle aime revisiter l'Histoire et mettre en lumière, tant dans ses romans que dans ses thrillers, des éléments du passé dont les manuels évitent de parler . </p><p>Son style enlevé, la justesse de ses personnages et sa façon de distiller le suspens vous emportent jusqu'à des dénouements saisissants et inattendus. </p><p>Anciennement psychologue et thérapeute familial, la retraite lui permet de se consacrer à l'écriture et au théâtre.</p>";
+function generateAboutContent (){
+
+			deleteMainContent();
+			createTitle("L'auteur", "<i class='fas fa-fingerprint'></i>");
+
+					postContainer = createDivIn(document.getElementById("main-content"), "authorContainer", "div", "author__container");
+					postContainer.innerHTML= "<img src='public/images/AW_profile.jpg'><p>Anne Waddington, auteure prolifique, partage son temps entre Toulouse et les Monts de Lacaune. </p><p> Elle aime revisiter l'Histoire et mettre en lumière, tant dans ses romans que dans ses thrillers, des éléments du passé dont les manuels évitent de parler . </p><p>Son style enlevé, la justesse de ses personnages et sa façon de distiller le suspens vous emportent jusqu'à des dénouements saisissants et inattendus. </p><p>Anciennement psychologue et thérapeute familial, la retraite lui permet de se consacrer à l'écriture et au théâtre.</p>";
 }
 
 
@@ -86,14 +94,24 @@ function getBookList()
 				.then (response => //Donc, on refait un then
 					{
 					/*console.log("contenu de response: "+response);*/
+					fadeContentOutIn ();
+					setTimeout(function() {generateBookItems(response)}, 500);
+					
+				})
+			})
+
+}
+
+function generateBookItems ($response){
+
 					
 					deleteMainContent();
 					createTitle("Bibliographie", "<i class='fas fa-book'></i>");
 					booksContainer = createDivIn(document.getElementById("main-content"), "book__books-container", "div", "book__books-container");
 
-					for (i = 0; i < Object.keys(response).length; i++)
+					for (i = 0; i < Object.keys($response).length; i++)
 					{
-						data = response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
+						data = $response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
 						currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.
 		
 						
@@ -117,64 +135,178 @@ function getBookList()
 						postReleaseDate.textContent = data['release_date'].substring(0, 4);
 						console.log(toString(data['release_date']));
 					};
-				})
-			})
 
 }
 
-function getPostList() {
+function getPostList($tag = "") {
 
-		fetch(strapiURL+"aw-blogposts")  //appel de l'api
+	
+	if ($tag != "")
+		{
+			filter =  "aw-blogposts/?tag="+$tag;
+			console.log(filter);
+		}
+	else {
+			filter =  "aw-blogposts";
+		};
+
+		fetch(strapiURL+filter)  //appel de l'api
 		.then (response =>  // Si on reçoit une réponse
 			{
 				response.json() //On la transforme en json mais c'est toujours une promise j'ai pas compris pourquoi
 				.then (response => //Donc, on refait un then
 					{
 
-						deleteMainContent();
-						createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
-						postsContainer = createDivIn(document.getElementById("main-content"), "blog__posts-container", "div", "blog__posts-container");
-					/*console.log("contenu de response: "+response);*/
-					for (i = 0; i < Object.keys(response).length; i++)
-					{
-						const data = response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
-						/*currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.*/
-						
-						postContainer = createDivIn(postsContainer, data['id'], "div", "blog__element blog__element--"+i);
-
-						postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
-						postImage = createDivIn(postContainer, "image", "img", "blog__element__image");
-						postTitle = createDivIn(postContainer, "title", "div", "blog__element__title");
-						postContent = createDivIn(postContainer, "text", "div", "blog__element__synopsis");
+						fadeContentOutIn ();
+						setTimeout(function() {generateBlogPosts (response)}, 500);
 
 						
-						
-						//On insère le src de la balise image
-						postImage.src = data['images'][0]['url'];
-						/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
-						postTitle.textContent = data['title'];
-						postContent.textContent = (data['text'].substring(0,500))+" ...";
-						postDateTag.textContent = data['tag']+" / "+data['published_at'].substring(0,10);
-
-						console.log(postContainer.id)
-						
-						/*postContainer.onclick = function() {;};*/
-
-						postContainer.addEventListener("click", function() {getBlogPost(this.id)});
-						
-						
-
-						
-					};
 				})
 			})
 }
 
+function fadeContentOutIn (){
+						
+						var childrenOfMainMenu = [].slice.call(document.getElementById("main-content").children);
+						childrenOfMainMenu.forEach(element => element.animate([{opacity: '1'}, {opacity: '0'}, {opacity :'0'}], 1000));
+						document.getElementsByClassName("main-menu")[0].animate([{opacity: '0'}, {opacity: '0'}, {opacity :'1'}],1);
+}
+
+
+
+function generateBlogPosts ($response) {
+
+						deleteMainContent();
+						createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
+						getBlogPostCategories();
+						postsContainer = createDivIn(document.getElementById("main-content"), "blog__posts-container", "div", "blog__posts-container");
+
+							for (i = 0; i < Object.keys($response).length; i++)
+							{
+								const data = $response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
+								/*currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.*/
+								
+								postContainer = createDivIn(postsContainer, data['id'], "div", "blog__element blog__element--"+i);
+
+								postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
+								postImage = createDivIn(postContainer, "image", "img", "blog__element__image");
+								postTitle = createDivIn(postContainer, "title", "div", "blog__element__title");
+								postContent = createDivIn(postContainer, "text", "div", "blog__element__synopsis");
+
+								
+								
+								//On insère le src de la balise image
+								postImage.src = data['images'][0]['url'];
+								/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
+								postTitle.textContent = data['title'];
+								postContent.textContent = (data['text'].substring(0,500))+" ...";
+								postDateTag.textContent = data['tag']+" / "+data['published_at'].substring(0,10);
+
+								console.log(postContainer.id)
+								
+								/*postContainer.onclick = function() {;};*/
+
+								postContainer.addEventListener("click", function() {getBlogPost(this.id)});
+
+								};
+
+
+}
+
+
+function getBlogPostCategories (){
+	fetch(strapiURL+"aw-blogposts")  //appel de l'api
+		.then (response =>  // Si on reçoit une réponse
+			{
+				response.json() //On la transforme en json mais c'est toujours une promise j'ai pas compris pourquoi
+				.then (response => //Donc, on refait un then
+					{
+						
+						const data = response.map($this => $this.tag); 						
+						const distinctCategories = new Set(data);
+
+						const icons = new Array();
+
+						var obj = {tagName: 'Nouvelles', icon: "<i class='fas fa-feather-alt'></i>"};
+						icons.push(obj);
+
+						var obj = {tagName: 'Episodes', icon: "<i class='fas fa-pen-fancy'></i>"};
+						icons.push(obj);
+
+						var obj = {tagName: 'Signatures', icon: "<i class='fas fa-signature'></i>"};
+						icons.push(obj);
+					
+
+						icons.forEach(element => createSideMenuItem(element));
+						icons.forEach(element => createSideMenuEventListener(element));
+					})
+
+})
+}
+
+
+
+// creates one side-menu items
+
+function createSideMenuItem ($element) {
+
+
+
+	$currentItem = createDivIn(document.getElementById("main-content__side-menu"), "main-content__side-menu__item--"+$element['tagName'], "div", "main-content__side-menu__item main-content__side-menu__item--"+$element['tagName']);
+	
+	$currentItem.innerHTML = $element['icon']+"<p>"+$element['tagName']+"</p>";
+}
+
+//Create the event listener for a filter_item
+
+function createSideMenuEventListener ($element) {
+
+		document.getElementById("main-content__side-menu__item--"+$element['tagName']).addEventListener("click", function() {getPostList($element['tagName'])});
+
+}
+
+//Creates the side menu, building the containers for utltérior filling
+
+function createTitle($contentType, $icon) {
+	sectionTitle = createDivIn(document.getElementById("main-content"), "title", "div", "main-content__title-container"); // on créée le conteneur de titre
+	sectionTitle.innerHTML = "<div id ='main-content__title-container__title' class = 'main-content__title-container__title'>" // le titre
+	+$icon//le logo
+	+"<h2>"
+	+$contentType
+	+"</h2>"
+	+"<div id ='main-content__side-menu' class = 'main-content__side-menu'></div></div>";
+	console.log('done creating title');
+	/*<i class='fas fa-book'></i> <i class='fab fa-hotjar'></i> <i class='fas fa-signature'></i>*/
+
+}
+
+function scrollFunction() {
+
+	if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) 
+	{
+		  document.getElementById('scrolltotop').style.display = "block";
+	} else 
+	{
+		document.getElementById('scrolltotop').style.display = "none";
+	}
+}
 
 
 window.onload = function(){
-	getPostList();
-};
+		scrolltotop = document.getElementById("scrolltotop");
+		// When the user scrolls down 20px from the top of the document, show the button
+		window.onscroll = function() {scrollFunction()};
+		getPostList();
+			
+}
+
+// When the user clicks on the button, scroll to the top of the document
+
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+} 
+
 
 document.getElementById('blog-posts').onclick = function () {
 	getPostList();
@@ -186,5 +318,6 @@ document.getElementById('book-list').onclick = function () {
 
 document.getElementById('author').onclick = function () {
 	aboutContent();
+	
 };
 	  

@@ -2,6 +2,40 @@ body {
     display: flex;
     flex-direction: column;
     background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(3, 3, 3));
+    & #scrolltotop {
+      box-sizing: border-box;
+      width: 4vw;
+      height: 4vw;
+      display: none; /* Hidden by default */
+      position: fixed; /* Fixed/sticky position */
+      bottom: 2vw; /* Place the button at the bottom of the page */
+      right: 0.8vw; /* Place the button 30px from the right */
+      z-index: 99; /* Make sure it does not overlap */
+      border: none; /* Remove borders */
+      outline: none; /* Remove outline */
+      color: $color-button-blog;
+      /* Set a background color */
+      background-color: white; 
+      border: 0.3vw solid $color-button-blog;
+      cursor: pointer; /* Add a mouse pointer on hover */
+      padding: 1vw; /* Some padding */
+      border-radius: 5vw; /* Rounded corners *//* Increase font size */
+      box-shadow: 0.2vw 0.2vw 1vw black;
+      overflow:visible;
+      & i {
+        font-size: 1vw;
+        
+      }
+      &:hover {
+        /*background-color: $color-button-blog; Add a dark-grey background on hover */
+        border: 0.4vw solid rgb(21, 151, 202);
+        color: rgb(21, 151, 202);
+        transform-origin: bottom;
+        animation: scale-btn-hover 1s ease-out infinite forwards;
+      }
+    }
+    
+   
 }
 
 .page-container {
@@ -30,18 +64,80 @@ body {
       margin-left: 2%;
 
     }
-  &__title {
-    display:flex;
-    flex-direction:row;
-    align-items: center;
-    
-    & > * {
-      
+  &__title-container {
+    &__title {
+      display: flex;
+      flex-direction:row;
+      height: 100%;
+      border-right: 0.2vw solid $color-button-blog;
+      align-content: flex-start;
+      flex-wrap:wrap;
+      width: 15vw;
+      padding-top: 5vw;
+      & > * {
+          padding-bottom: 1vw;
+      }
 
-        
-        font-size: 3vw;
-        text-shadow:rgb(102, 102, 102) 0.2vw 0.2vw 0.2vw;
+
+      & h2 {
+          margin: 0;
+          padding: 0;
+          font-size: 1.5vw;
+          line-height: 1.5rem;
+          border-bottom: 0.2vw solid $color-button-blog;
+          width: 75%;
+          padding-left:5%;
+          text-align: center;
+      }
+      & i {
+          border-bottom: 0.2vw solid $color-button-blog;
+          width: 20%;
+          font-size: 1.5rem;
+          line-height: 1.5rem;
+          text-align: right;
+          color: rgb(21, 151, 202);
+      }
+  
       
+    }
+  }
+  &__side-menu {
+    width: 15vw;
+    &__item {
+      display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        align-items:center;
+        font-size: 3vw;
+  
+        & i {
+            box-sizing:border-box;
+            display:flex;
+            background-color: rgb(255, 255, 255);
+            border-radius: 5rem;
+            transition: transform 100ms ease-in-out;
+            width:4vw;
+            height:4vw;
+            align-items:center;
+            justify-content:center;
+            color: rgb(21, 151, 202);
+            box-shadow:0.2vw 0.2vw 0.2vw lightgrey;
+            padding: 1vw;
+            margin-top: 2vw;
+            font-size: 2vw;
+            border: 0.1rem solid rgb(21, 151, 202);
+            &:hover {
+                transform: scale(1.02);
+                color: $color-button-blog;
+            }
+          }
+          & p {
+            font-family: 'Lato';
+            margin: 0;
+            padding: 0;
+            font-size: 1vw;
+          }
     }
   }
 }

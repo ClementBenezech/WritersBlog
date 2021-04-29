@@ -133,13 +133,34 @@
 
     @keyframes to-primary {
       100% {
-        transform: scale(1.01);
+      transform: scale(1.01);
       }
   }
 
-  @keyframes to-origin {
-    100% {
-      background-color: $color-background-body;
-      transform: scale(1.0);
+  @keyframes scale-btn-hover {
+    0% {
+
+      box-shadow: 0.2vw 0.2vw 1vw black;
     }
+    50% {
+
+      bottom: 3vw;
+
+    }
+    100% {
+
+      box-shadow: 0.2vw 0.2vw 1vw black;
+    }
+}
+
+@keyframes opacity-to-zero {
+  100%{
+    opacity: 0;
+  }
+}
+
+@keyframes opacity-to-one {
+  100%{
+    opacity: 1;
+  }
 }
