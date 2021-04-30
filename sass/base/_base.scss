@@ -8,8 +8,8 @@ body {
       height: 4vw;
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
-      bottom: 2vw; /* Place the button at the bottom of the page */
-      right: 0.8vw; /* Place the button 30px from the right */
+      bottom: 17vw; /* Place the button at the bottom of the page */
+      right: 4vw; /* Place the button 30px from the right */
       z-index: 99; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
@@ -46,7 +46,7 @@ body {
 }
 .main-content {
     box-sizing: border-box;
-    background: linear-gradient(45deg,rgb(255, 255, 255), rgb(231, 231, 231));
+    background: linear-gradient(0deg,rgb(255, 255, 255) 90%, rgb(231, 231, 231));
     padding: 5vw 3vw 3vw 5vw;
     overflow: visible;
     width: 90%;
@@ -72,7 +72,7 @@ body {
       border-right: 0.2vw solid $color-button-blog;
       align-content: flex-start;
       flex-wrap:wrap;
-      width: 15vw;
+      width: 10vw;
       padding-top: 5vw;
       & > * {
           padding-bottom: 1vw;

@@ -74,7 +74,7 @@
         right: 0vw;
         float: right;
         padding-top: 5vw;
-        
+        margin-left: 1vw;
 
         margin-bottom: 5vw;
         /*background-color: white;*/
@@ -169,6 +169,9 @@
             white-space: pre-wrap;
             background: linear-gradient(180deg, #eaeaea 10%,  white 90%);
             text-shadow: 0.1vw 0.1vw 0.3vw white;
+            border-radius: 0 0 3vw 3vw;
+            /*border: 0.2vw solid lightblue;*/
+
             
         }
     }

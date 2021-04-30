@@ -106,7 +106,7 @@ function generateBookItems ($response){
 
 					
 					deleteMainContent();
-					createTitle("Bibliographie", "<i class='fas fa-book'></i>");
+					createTitle("Livres", "<i class='fas fa-book'></i>");
 					booksContainer = createDivIn(document.getElementById("main-content"), "book__books-container", "div", "book__books-container");
 
 					for (i = 0; i < Object.keys($response).length; i++)
@@ -303,8 +303,10 @@ window.onload = function(){
 // When the user clicks on the button, scroll to the top of the document
 
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
+	document.body.scrollTo({top:0, behavior: 'smooth'});
+  /*document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera*/
 } 
 
 

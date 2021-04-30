@@ -121,7 +121,7 @@
     box-shadow: 0.2vw 0.2vw 1vw black;
   }
   50% {
-    bottom: 3vw;
+    bottom: 16vw;
   }
   100% {
     box-shadow: 0.2vw 0.2vw 1vw black;
@@ -150,9 +150,9 @@ body #scrolltotop {
   /* Hidden by default */
   position: fixed;
   /* Fixed/sticky position */
-  bottom: 2vw;
+  bottom: 17vw;
   /* Place the button at the bottom of the page */
-  right: 0.8vw;
+  right: 4vw;
   /* Place the button 30px from the right */
   z-index: 99;
   /* Make sure it does not overlap */
@@ -194,7 +194,7 @@ body #scrolltotop:hover {
 
 .main-content {
   box-sizing: border-box;
-  background: linear-gradient(45deg, white, #e7e7e7);
+  background: linear-gradient(0deg, white 90%, #e7e7e7);
   padding: 5vw 3vw 3vw 5vw;
   overflow: visible;
   width: 90%;
@@ -219,7 +219,7 @@ body #scrolltotop:hover {
   border-right: 0.2vw solid #ffa600;
   align-content: flex-start;
   flex-wrap: wrap;
-  width: 15vw;
+  width: 10vw;
   padding-top: 5vw;
 }
 .main-content__title-container__title > * {
@@ -655,11 +655,13 @@ body #scrolltotop:hover {
 }
 .book__element {
   width: 100%;
-  border-radius: 0 1vw 1vw 0;
+  box-sizing: border-box;
+  border-radius: 1vw;
   position: relative;
   display: flex;
   flex-direction: row;
-  margin-bottom: 5vw;
+  margin: 2vw;
+  padding: 2vw;
   box-shadow: 0 0.2vw 0.2vw grey;
   /*background-color: white;*/
   justify-content: space-between;
@@ -676,6 +678,8 @@ body #scrolltotop:hover {
   object-fit: cover;
   object-position: left;
   box-shadow: 0.2vw 0 1vw grey;
+  margin: 0 2vw;
+  border-radius: 1vw;
 }
 .book__element__text-container {
   display: flex;
@@ -789,6 +793,7 @@ body #scrolltotop:hover {
   right: 0vw;
   float: right;
   padding-top: 5vw;
+  margin-left: 1vw;
   margin-bottom: 5vw;
   /*background-color: white;*/
   flex-wrap: wrap;
@@ -858,6 +863,8 @@ body #scrolltotop:hover {
   white-space: pre-wrap;
   background: linear-gradient(180deg, #eaeaea 10%, white 90%);
   text-shadow: 0.1vw 0.1vw 0.3vw white;
+  border-radius: 0 0 3vw 3vw;
+  /*border: 0.2vw solid lightblue;*/
 }
 
 .post-filters {
@@ -880,13 +887,17 @@ body #scrolltotop:hover {
   object-fit: cover;
   box-shadow: 0.2vw 0.2vw 1vw black;
   border: 0.2vw solid white;
+  margin-bottom: -4vw;
+  z-index: 99;
 }
 .author__container p {
   font-family: "Lato";
-  font-size: 2vh;
-  line-height: 2vh;
-  text-align: center;
-  padding: 0 10vw;
+  font-size: 2vw;
+  line-height: 2vw;
+  text-align: justify;
+  padding: 5vw 1vw 1vw 0;
+  margin: 0 10vw;
+  /*background-color: $color-button-blog;*/
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -133,11 +133,13 @@
     
     &__element {
         width: 100%;
-        border-radius: 0 1vw 1vw 0;
+        box-sizing: border-box;
+        border-radius: 1vw;
         position: relative;
         display: flex;
         flex-direction: row;
-        margin-bottom: 5vw;
+        margin: 2vw;
+        padding: 2vw;
         box-shadow: 0 0.2vw 0.2vw grey;
         /*background-color: white;*/
         justify-content: space-between;
@@ -154,6 +156,8 @@
             object-fit: cover;
             object-position: left;
             box-shadow: 0.2vw 0 1vw grey;
+            margin: 0 2vw;
+            border-radius: 1vw;
         }
         &__text-container {
                 display: flex;
