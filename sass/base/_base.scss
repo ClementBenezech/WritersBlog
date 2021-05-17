@@ -1,6 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
+    @include mobile-only {
+      position:relative;
+    }
     background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(3, 3, 3));
     & #scrolltotop {
       box-sizing: border-box;

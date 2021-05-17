@@ -1,18 +1,56 @@
+.nav-expand {
+    height: 2vh;
+    width: 50vw;
+    background-color:rgba(255, 143, 15, 0.89);
+    color:white;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    border-radius: 2vh 2vh 0 0;
+    margin-top:-2vh;
+
+
+    @include mobile-only {
+        display:flex;
+    }
+}
+
 .main-menu {
+
     display: flex;
     z-index: 1;
     margin: 0 auto;
     height: 4vw;
-    margin-top: -7vw;
     width: 50%;
 
-    justify-content: space-around;
+    justify-content: space-evenly;
     overflow: visible;
     position: relative;
+
+    @include mobile-only {
+        position: fixed;
+        box-sizing: border-box;
+        bottom:-93vh;
+        left:4vw;
+        height: 93vh;
+        width: 92vw;
+        margin:0;
+        margin-top: 0vw;
+        background-color: transparent;
+        z-index:3;
+        flex-direction:row;
+        background:rgba(255, 255, 255, 0.945);
+        margin: 0;
+        flex-wrap:wrap;
+        align-items: flex-start;
+        box-shadow: -0.2vh -0.2vh 0.2vh rgba(255, 255, 255, 0.534); 
+        border-radius: 1vh 1vh 0 0;
+    }
 
     & .button-wrapper {
         filter: drop-shadow(-1vw -1vw 1vw #ffffff);
         position: relative;
+        
         &:hover {
             & > * {
                 transform-origin: bottom;
@@ -26,27 +64,37 @@
             }
         
 
-        &:nth-child(1) {
+        &:nth-child(2) {
             top: -1.5vw;
             & > * {
                 background: linear-gradient(0deg, rgb(0, 0, 0, 0.801), $color-button-blog);
             }
         }
 
-        &:nth-child(2) {
+        &:nth-child(3) {
             top: -1vw;
             & > * {
                 background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), $color-button-books);
             }
         }
 
-        &:nth-child(3) {
+        &:nth-child(4) {
             top: -0.5vw;
             & > * {
             background: linear-gradient(0deg, rgba(0, 0, 0, 0.801), $color-button-about);
             }
         }
-    
+
+        @include mobile-only {
+        &:nth-child(1n+0) {   
+            top: 0;
+            & > * {
+            background: none;
+            border-bottom: 0.2vh solid rgb(253, 133, 20);
+            }
+        }
+    }
+
         & > * {
 
             outline: none;
@@ -59,15 +107,30 @@
             font-weight: bolder;
             width: 9vw;
             height: 5vw;
+
             display:flex;
-            justify-content:space-around;
+            justify-content:center;
             align-items: center;
             /*-webkit-clip-path: polygon(0 100%, 100% 90%, 10% 0);
             clip-path: polygon(0 100%, 100% 90%, 10% 0);*/
+
+            @include mobile-only {
+                width: 70vw;
+                height: 20vh;  
+                color:$color-secondary;
+                font-size: 12vw; 
+                justify-content: space-evenly;
+            }
+            
   
            /* transition: height transform 500ms ease-in-out;*/
            -webkit-clip-path: polygon(0 20%, 0 100%, 100% 100%, 100%  0);
            clip-path: polygon(0 20%, 0 100%, 100% 100%, 100% 0);
+
+           @include mobile-only {
+            -webkit-clip-path: polygon(0 100%, 100% 100%, 100% 0, 0  0);
+           clip-path: polygon(0 100%, 100% 100%, 100% 0, 0  0);
+        }
             
         }
     
