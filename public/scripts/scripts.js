@@ -32,41 +32,37 @@ function getBlogPost($id) {
 	console.log("t'as cliqué mon buddy"+$id);
 	console.log(strapiURL+"aw-blogposts/"+$id);
 	fetch(strapiURL+"aw-blogposts/"+$id)  //appel de l'api
-		.then (response =>  // Si on reçoit une réponse
+		.then (response => response.json())// Si on reçoit une réponse
+		.then (response => //Donc, on refait un then
 			{
-				response.json() //On la transforme en json mais c'est toujours une promise j'ai pas compris pourquoi
-				.then (response => //Donc, on refait un then
-					{
 
-						deleteMainContent();
-						createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
-						
-						data = response; //Dans une variable data, on met l'enregistrement renvoyé par l'api
-						console.log(data);
-						postContainer = createDivIn(document.getElementById("main-content"), "post", "div", "blog__element");
+				deleteMainContent();
+				createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
+				
+				data = response; //Dans une variable data, on met l'enregistrement renvoyé par l'api
+				console.log(data);
+				postContainer = createDivIn(document.getElementById("main-content"), "post", "div", "blog__element");
 
-						postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
-						postImage = createDivIn(postContainer, "image", "img", "blog__element__image");
-						postTitle = createDivIn(postContainer, "title", "div", "blog__element__title");
-						postContent = createDivIn(postContainer, "text", "div", "blog__element__synopsis");
-						
-						//On insère le src de la balise image
-						postImage.src = data['images'][0]['url'];
-						
+				postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
+				postImage = createDivIn(postContainer, "image", "img", "blog__element__image");
+				postTitle = createDivIn(postContainer, "title", "div", "blog__element__title");
+				postContent = createDivIn(postContainer, "text", "div", "blog__element__synopsis");
+				
+				//On insère le src de la balise image
+				postImage.src = data['images'][0]['url'];
+				
 
-						/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
-						postTitle.textContent = data['title'];
-						console.log(data['text'].substring(0,10));
-						postContent.textContent = (data['text'])+" ...";
-						postDateTag.textContent = data['tag']+" / "+data['published_at'].substring(0,10);
-						console.log(data['published_at'].substring(0,10));
+				/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
+				postTitle.textContent = data['title'];
+				console.log(data['text'].substring(0,10));
+				postContent.textContent = (data['text'])+" ...";
+				postDateTag.textContent = data['tag']+" / "+data['published_at'].substring(0,10);
+				console.log(data['published_at'].substring(0,10));
 
 
-						
-					})
-	
+				
 			})
-
+	
 
 }
 
@@ -106,7 +102,7 @@ function generateBookItems ($response){
 
 					
 					deleteMainContent();
-					createTitle("Livres", "<i class='fas fa-book'></i>");
+					createTitle("Bibliographie", "<i class='fas fa-book'></i>");
 					booksContainer = createDivIn(document.getElementById("main-content"), "book__books-container", "div", "book__books-container");
 
 					for (i = 0; i < Object.keys($response).length; i++)
@@ -303,10 +299,8 @@ window.onload = function(){
 // When the user clicks on the button, scroll to the top of the document
 
 function topFunction() {
-
-	document.body.scrollTo({top:0, behavior: 'smooth'});
-  /*document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera*/
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 } 
 
 
