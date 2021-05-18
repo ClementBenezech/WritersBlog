@@ -308,6 +308,8 @@ document.getElementById('blog-posts').onclick = function () {
 	getPostList();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
+	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
+	document.getElementById('nav-expand').addEventListener("click", showMenu, false);
 
 };
 
@@ -315,12 +317,16 @@ document.getElementById('book-list').onclick = function () {
 	getBookList();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
+	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
+	document.getElementById('nav-expand').addEventListener("click", showMenu, false);
 };
 
 document.getElementById('author').onclick = function () {
 	aboutContent();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
+	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
+	document.getElementById('nav-expand').addEventListener("click", showMenu, false);
 	
 };
 
