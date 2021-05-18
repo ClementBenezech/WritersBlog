@@ -53,6 +53,9 @@ body {
     padding: 5vw 3vw 3vw 5vw;
     overflow: visible;
     width: 90%;
+    @include mobile-only {
+      width:100%;
+    }
     margin: -3vw auto -7vw auto;
     box-shadow: 0 0 1vw white;
     z-index: 2;

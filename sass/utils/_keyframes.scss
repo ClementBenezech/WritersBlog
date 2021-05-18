@@ -164,3 +164,23 @@
     opacity: 1;
   }
 }
+
+@keyframes hide-nav-bar{
+  0% {
+    bottom: 0;
+  }
+  100% {
+    bottom: -91vh;
+  }
+
+}
+
+@keyframes show-nav-bar{
+  0% {
+    bottom: -91vh;
+  }
+  100% {
+    bottom: 0vh;
+  }
+
+}

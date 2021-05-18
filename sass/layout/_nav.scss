@@ -1,13 +1,13 @@
 .nav-expand {
-    height: 2vh;
-    width: 50vw;
+    height: 5vh;
+    width: 30vw;
     background-color:rgba(255, 143, 15, 0.89);
     color:white;
     display:none;
     align-items:center;
     justify-content:center;
     border-radius: 2vh 2vh 0 0;
-    margin-top:-2vh;
+    margin-top:-5vh;
 
 
     @include mobile-only {
@@ -31,9 +31,9 @@
         position: fixed;
         box-sizing: border-box;
         bottom:-93vh;
-        left:4vw;
+        left:0vw;
         height: 93vh;
-        width: 92vw;
+        width: 99vw;
         margin:0;
         margin-top: 0vw;
         background-color: transparent;
@@ -43,8 +43,13 @@
         margin: 0;
         flex-wrap:wrap;
         align-items: flex-start;
-        box-shadow: -0.2vh -0.2vh 0.2vh rgba(255, 255, 255, 0.534); 
-        border-radius: 1vh 1vh 0 0;
+        box-shadow: -0.2vh -0.2vh 0.2vh rgba(255, 255, 255, 0.534);
+        &--show {
+            animation: show-nav-bar 0.5s ease-out forwards;            
+        }
+        &--hide {
+            animation: hide-nav-bar 1s ease-in forwards;
+        }
     }
 
     & .button-wrapper {

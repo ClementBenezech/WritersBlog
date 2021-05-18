@@ -306,22 +306,28 @@ function topFunction() {
 
 document.getElementById('blog-posts').onclick = function () {
 	getPostList();
-	document.getElementById('main-menu').style.bottom = '-93vh';
+	document.getElementById('main-menu').classList.remove('main-menu--show');
+	document.getElementById('main-menu').classList.add('main-menu--hide');
+
 };
 
 document.getElementById('book-list').onclick = function () {
 	getBookList();
-	document.getElementById('main-menu').style.bottom = '-93vh';
+	document.getElementById('main-menu').classList.remove('main-menu--show');
+	document.getElementById('main-menu').classList.add('main-menu--hide');
 };
 
 document.getElementById('author').onclick = function () {
 	aboutContent();
-	document.getElementById('main-menu').style.bottom = '-93vh';
+	document.getElementById('main-menu').classList.remove('main-menu--show');
+	document.getElementById('main-menu').classList.add('main-menu--hide');
 	
 };
 
 function hideMenu() {
-	document.getElementById('main-menu').style.bottom = '-93vh';
+	
+	document.getElementById('main-menu').classList.remove('main-menu--show');
+	document.getElementById('main-menu').classList.add('main-menu--hide');
 	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
 	document.getElementById('nav-expand').addEventListener("click", showMenu, false);
 	
@@ -329,12 +335,14 @@ function hideMenu() {
 }
 
 function showMenu() {
-	document.getElementById('main-menu').style.bottom = '0vh';
+	
+	document.getElementById('main-menu').classList.remove('main-menu--hide');
+	document.getElementById('main-menu').classList.add('main-menu--show');
 	document.getElementById('nav-expand').removeEventListener("click", showMenu, false);
 	document.getElementById('nav-expand').addEventListener("click", hideMenu, false);
 
 	console.log("showMenu");
 }
 
-document.getElementById('nav-expand').addEventListener("click", hideMenu, false);
+document.getElementById('nav-expand').addEventListener("click", showMenu, false);
 	  
