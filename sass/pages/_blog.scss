@@ -128,6 +128,10 @@
             background:white;
 
             z-Index: 1;
+
+            @include mobile-only {
+                font-size: 3vh;
+              }
         }
 
         &__publisher {
@@ -147,9 +151,14 @@
             width: 20%;
             margin-left: 80%;
             color:white;
-            font-weight: bold;
             text-align:center;
             clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);
+            @include mobile-only {
+                font-size: 2vh;
+                width:80%;
+                margin-left:20%;
+                z-index:0;
+              }
         }
 
         &__synopsis {
@@ -171,6 +180,9 @@
             text-shadow: 0.1vw 0.1vw 0.3vw white;
             border-radius: 0 0 3vw 3vw;
             /*border: 0.2vw solid lightblue;*/
+            @include mobile-only {
+                font-size: 2.5vh;
+              }
 
             
         }

@@ -143,6 +143,7 @@
         box-shadow: 0 0.2vw 0.2vw grey;
         /*background-color: white;*/
         justify-content: space-between;
+        align-items:center;
         overflow: hidden;
         background: linear-gradient(120deg, white 30%,  rgb(235, 235, 235));
         &:nth-child(odd) {
@@ -180,6 +181,9 @@
         }
         &__title {
             font-size: 2vw;
+            @include mobile-only {
+                font-size: 3vw;
+            }
             flex-basis: max-content;
             width: 100%;
             margin-right: 2%;
@@ -202,6 +206,9 @@
 
         &__synopsis {
             font-size: 1.5vw;
+            @include mobile-only {
+                font-size: 3vw;
+            }
             flex-basis: max-content;
             text-align: justify;
             

@@ -83,6 +83,8 @@ body {
       width: 10vw;
       @include mobile-only {
         width: 88vw;
+        margin-bottom:1vh;
+        border-right: none;
       }
       padding-top: 5vw;
       & > * {
@@ -102,6 +104,7 @@ body {
           @include mobile-only {
             font-size:2vh;
             text-align:left;
+            width:80%;
           }
       }
       & i {
@@ -133,12 +136,13 @@ body {
       display: flex;
         flex-direction: column;
         justify-content: space-around;
-        width: 30%;
+        width: 100%;
         align-items:center;
  
         font-size: 3vw;
         @include mobile-only {
-          flex-direction:row;
+          width:30%;
+          align-content:flex-start;
           
         }
         
@@ -156,9 +160,13 @@ body {
             justify-content:center;
             color: rgb(21, 151, 202);
             box-shadow:0.2vw 0.2vw 0.2vw lightgrey;
-            padding: 1vw;
+            padding: 3vh;
             margin-top: 2vw;
             font-size: 2vw;
+            @include mobile-only {
+             font-size:5vh;
+              
+            }
             border: 0.1rem solid rgb(21, 151, 202);
             &:hover {
                 transform: scale(1.02);
@@ -197,6 +205,12 @@ h1 {
     font-family: "Raleway";
     margin-right: 1vw;
     margin-top : 2vw;
+    @include mobile-only {
+      font-size: 4.5vh;
+      margin-top: 2vh;
+      padding: 3vh;
+      z-index: 3;
+    }
 }
 
 .load-screen {
