@@ -142,12 +142,12 @@
     bottom: 0;
   }
   100% {
-    bottom: -91vh;
+    bottom: -93vh;
   }
 }
 @keyframes show-nav-bar {
   0% {
-    bottom: -91vh;
+    bottom: -93vh;
   }
   100% {
     bottom: 0vh;
@@ -219,17 +219,18 @@ body #scrolltotop:hover {
   padding: 5vw 3vw 3vw 5vw;
   overflow: visible;
   width: 90%;
+  flex-direction: row;
   margin: -3vw auto -7vw auto;
   box-shadow: 0 0 1vw white;
   z-index: 2;
   -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
   clip-path: polygon(0 0, 3vw 100%, 100% 98%, 100% 3vw, 0 0);
   display: flex;
-  flex-direction: row;
 }
 @media screen and (max-width: 1080px) {
   .main-content {
     width: 100%;
+    flex-direction: column;
   }
 }
 .main-content h2 {
@@ -248,6 +249,11 @@ body #scrolltotop:hover {
   width: 10vw;
   padding-top: 5vw;
 }
+@media screen and (max-width: 1080px) {
+  .main-content__title-container__title {
+    width: 88vw;
+  }
+}
 .main-content__title-container__title > * {
   padding-bottom: 1vw;
 }
@@ -261,6 +267,12 @@ body #scrolltotop:hover {
   padding-left: 5%;
   text-align: center;
 }
+@media screen and (max-width: 1080px) {
+  .main-content__title-container__title h2 {
+    font-size: 2vh;
+    text-align: left;
+  }
+}
 .main-content__title-container__title i {
   border-bottom: 0.2vw solid #ffa600;
   width: 20%;
@@ -269,16 +281,36 @@ body #scrolltotop:hover {
   text-align: right;
   color: #1597ca;
 }
+@media screen and (max-width: 1080px) {
+  .main-content__title-container__title i {
+    text-align: left;
+    width: 8%;
+  }
+}
 .main-content__side-menu {
   width: 15vw;
+}
+@media screen and (max-width: 1080px) {
+  .main-content__side-menu {
+    display: flex;
+    flex-direction: row;
+    width: 99vw;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+  }
 }
 .main-content__side-menu__item {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 100%;
+  width: 30%;
   align-items: center;
   font-size: 3vw;
+}
+@media screen and (max-width: 1080px) {
+  .main-content__side-menu__item {
+    flex-direction: row;
+  }
 }
 .main-content__side-menu__item i {
   box-sizing: border-box;
@@ -306,6 +338,11 @@ body #scrolltotop:hover {
   margin: 0;
   padding: 0;
   font-size: 1vw;
+}
+@media screen and (max-width: 1080px) {
+  .main-content__side-menu__item p {
+    font-size: 2vh;
+  }
 }
 
 .logo {
@@ -484,14 +521,15 @@ body #scrolltotop:hover {
 
 .nav-expand {
   height: 5vh;
-  width: 30vw;
+  width: 15vw;
   background-color: rgba(255, 143, 15, 0.89);
   color: white;
   display: none;
   align-items: center;
   justify-content: center;
-  border-radius: 2vh 2vh 0 0;
+  border-radius: 1vh 1vh 0 0;
   margin-top: -5vh;
+  margin-left: 60vw;
 }
 @media screen and (max-width: 1080px) {
   .nav-expand {
