@@ -131,6 +131,7 @@ body {
       width: 99vw;
       flex-wrap: nowrap;
       align-content: flex-start;
+      margin-top:3vh;
     }
     &__item {
       display: flex;
@@ -141,7 +142,7 @@ body {
  
         font-size: 3vw;
         @include mobile-only {
-          width:30%;
+          width:33%;
           align-content:flex-start;
           
         }

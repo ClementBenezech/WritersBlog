@@ -300,6 +300,7 @@ body #scrolltotop:hover {
     width: 99vw;
     flex-wrap: nowrap;
     align-content: flex-start;
+    margin-top: 3vh;
   }
 }
 .main-content__side-menu__item {
@@ -312,7 +313,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .main-content__side-menu__item {
-    width: 30%;
+    width: 33%;
     align-content: flex-start;
   }
 }
@@ -537,7 +538,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .awheader h1 {
-    font-size: 4vh;
+    font-size: 3.5vh;
     margin: 0;
   }
 }
