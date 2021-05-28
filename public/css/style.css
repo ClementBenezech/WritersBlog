@@ -177,11 +177,6 @@ body {
   width: 100vw;
   background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #030303);
 }
-@media screen and (max-width: 1080px) {
-  body {
-    position: relative;
-  }
-}
 body #scrolltotop {
   box-sizing: border-box;
   width: 4vw;
