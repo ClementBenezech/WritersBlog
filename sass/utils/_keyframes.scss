@@ -184,3 +184,21 @@
   }
 
 }
+
+@keyframes coming-from-right {
+  0% {
+    right: -100vh;
+  }
+  100% {
+    right: 0vh;
+  }
+}
+
+@keyframes poping-blog-post-date {
+  0% {
+    left: -70vw;
+  }
+  100% {
+    left: 0vw;
+  }
+}

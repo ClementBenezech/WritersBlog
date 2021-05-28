@@ -153,6 +153,22 @@
     bottom: 0vh;
   }
 }
+@keyframes coming-from-right {
+  0% {
+    right: -100vh;
+  }
+  100% {
+    right: 0vh;
+  }
+}
+@keyframes poping-blog-post-date {
+  0% {
+    left: -70vw;
+  }
+  100% {
+    left: 0vw;
+  }
+}
 body {
   display: flex;
   flex-direction: column;
@@ -534,6 +550,11 @@ body #scrolltotop:hover {
   padding-right: 5vw;
   position: relative;
 }
+@media screen and (max-width: 1080px) {
+  .awheader {
+    padding-right: 0;
+  }
+}
 .awheader h1 {
   font-family: "Raleway";
   border-bottom: 0.1vw solid white;
@@ -550,8 +571,12 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .awheader h1 {
-    font-size: 3.5vh;
+    font-size: 7vw;
     margin: 0;
+    margin-top: 6vw;
+    border-bottom: none;
+    border-top: 0.1vw solid white;
+    width: 92vw;
   }
 }
 
@@ -1046,7 +1071,7 @@ body #scrolltotop:hover {
   margin-left: 1%;
 }
 .blog__element {
-  width: 100%;
+  width: 90vw;
   position: relative;
   right: 0vw;
   float: right;
@@ -1057,12 +1082,27 @@ body #scrolltotop:hover {
   flex-wrap: wrap;
   /*transition: transform 200ms ease-in-out;*/
 }
+@media screen and (max-width: 1080px) {
+  .blog__element {
+    padding: 0.5vw;
+    border-radius: 0vw 0vw 1vw 1vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
 .blog__element:hover {
   transform-origin: top left;
-  animation: to-primary 1s ease-in-out forwards;
+  /*animation: to-primary 1s ease-in-out forwards;*/
 }
 .blog__element:nth-child(odd) {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 1080px) {
+  .blog__element:nth-child(odd) {
+    flex-direction: row;
+  }
 }
 .blog__element__image {
   float: left;
@@ -1071,9 +1111,19 @@ body #scrolltotop:hover {
   object-fit: cover;
   object-position: left;
   box-shadow: 0.2vw 0.2vw 0.5vw black;
-  border-radius: 50%;
   margin: -3vw 2vw 2vw -3vw;
   z-index: 2;
+}
+@media screen and (max-width: 1080px) {
+  .blog__element__image {
+    float: none;
+    width: 100%;
+    height: 40vh;
+    border-radius: 0;
+    margin: 0;
+    box-shadow: none;
+    z-index: 1;
+  }
 }
 .blog__element__title {
   font-size: 3vw;
@@ -1085,11 +1135,23 @@ body #scrolltotop:hover {
   box-shadow: 0.2vw 0.2vw 0.4vw #d4d3d3;
   font-family: "Raleway";
   background: white;
-  z-Index: 1;
+  z-Index: 3;
 }
 @media screen and (max-width: 1080px) {
   .blog__element__title {
-    font-size: 3vh;
+    font-size: 2.5vh;
+    padding: 1vw;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.87);
+    text-align: center;
+    position: relative;
+    top: -22vh;
+    max-width: 50vw;
+    margin-right: 0;
+    border: none;
+    box-shadow: none;
+    display: inline-block;
+    color: #005d89;
   }
 }
 .blog__element__publisher {
@@ -1104,19 +1166,28 @@ body #scrolltotop:hover {
   color: #6d6d6d;
   font-family: "Lato";
   text-align: end;
-  background-color: #ffa600;
-  width: 20%;
+  background-color: white;
+  width: 100%;
   margin-left: 80%;
-  color: white;
+  color: #001823;
   text-align: center;
   clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);
 }
 @media screen and (max-width: 1080px) {
   .blog__element__date {
-    font-size: 2vh;
-    width: 80%;
-    margin-left: 20%;
+    font-size: 3vw;
+    line-height: 4vw;
+    max-width: 45%;
+    margin-left: 0;
     z-index: 0;
+    padding-bottom: 0vw;
+    clip-path: none;
+    background-color: #ffa600;
+    animation: poping-blog-post-date 1s ease-out forwards;
+    position: relative;
+    text-align: center;
+    bottom: -2vw;
+    z-index: 3;
   }
 }
 .blog__element__synopsis {
@@ -1124,13 +1195,13 @@ body #scrolltotop:hover {
   line-height: 2rem;
   text-align: justify;
   padding: 2vw 2vw 2vw 2vw;
-  font-family: "Lato";
+  font-family: "DM Sans";
   background-color: white;
   background: white;
+  z-index: 2;
   text-overflow: ellipsis;
   box-shadow: 0.2vw 0.2vw 0.4vw #d4d3d3;
   white-space: pre-line;
-  white-space: pre-wrap;
   background: linear-gradient(180deg, #eaeaea 10%, white 90%);
   text-shadow: 0.1vw 0.1vw 0.3vw white;
   border-radius: 0 0 3vw 3vw;
@@ -1138,8 +1209,18 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .blog__element__synopsis {
-    font-size: 2.5vh;
-    line-height: 3.5vh;
+    font-size: 3vw;
+    line-height: 4vw;
+    border-radius: 0;
+    border-radius: 1vw;
+    margin-top: -25vh;
+    width: 90%;
+    background: linear-gradient(0deg, black, rgba(0, 0, 0, 0.712));
+    padding-top: 5vh;
+    color: white;
+    text-shadow: none;
+    position: relative;
+    animation: coming-from-right 1s ease-in-out forwards;
   }
 }
 
