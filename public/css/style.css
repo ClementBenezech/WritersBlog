@@ -249,7 +249,7 @@ body #scrolltotop:hover {
   background: linear-gradient(0deg, white 90%, #e7e7e7);
   padding: 5vw 3vw 3vw 5vw;
   overflow: visible;
-  width: 90%;
+  width: 90vw;
   flex-direction: row;
   margin: -3vw auto -7vw auto;
   box-shadow: 0 0 1vw white;
