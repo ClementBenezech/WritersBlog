@@ -335,7 +335,7 @@ body #scrolltotop:hover {
   .main-content__side-menu {
     display: flex;
     flex-direction: row;
-    width: 99vw;
+    width: 60vw;
     flex-wrap: nowrap;
     align-content: flex-start;
     position: absolute;
@@ -353,7 +353,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .main-content__side-menu__item {
-    width: 15%;
+    width: 20vw;
     align-content: flex-start;
     font-size: 1vw;
   }

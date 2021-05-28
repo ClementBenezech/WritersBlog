@@ -150,7 +150,7 @@ body {
     @include mobile-only {
       display:flex;
       flex-direction:row;
-      width: 99vw;
+      width: 60vw;
       flex-wrap: nowrap;
       align-content: flex-start;
       position: absolute;
@@ -166,7 +166,7 @@ body {
  
         font-size: 3vw;
         @include mobile-only {
-          width:15%;
+          width:20vw;
           align-content:flex-start;
           font-size:1vw;
           
