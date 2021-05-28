@@ -174,7 +174,7 @@ body {
   flex-direction: column;
   overflow-x: hidden;
   min-height: 100vh;
-  min-width: 100vw;
+  width: 100vw;
   background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #030303);
 }
 @media screen and (max-width: 1080px) {
@@ -262,6 +262,7 @@ body #scrolltotop:hover {
   .main-content {
     width: 100%;
     flex-direction: column;
+    min-height: 80vh;
   }
 }
 .main-content h2 {

@@ -1,9 +1,9 @@
 body {
     display: flex;
     flex-direction: column;
-    overflow-x: hidden;  
+    overflow-x: hidden;
     min-height: 100vh;
-    min-width: 100vw;
+    width: 100vw;
     @include mobile-only {
       position:relative;
 
@@ -71,6 +71,7 @@ body {
     @include mobile-only {
       width:100%;
       flex-direction:column;
+      min-height: 80vh;
     }
     margin: -3vw auto -7vw auto;
     box-shadow: 0 0 1vw white;
