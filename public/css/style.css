@@ -173,7 +173,14 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
   background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #030303);
+}
+@media screen and (max-width: 1080px) {
+  body {
+    position: relative;
+  }
 }
 body #scrolltotop {
   box-sizing: border-box;
@@ -346,7 +353,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .main-content__side-menu__item {
-    width: 20%;
+    width: 15%;
     align-content: flex-start;
     font-size: 1vw;
   }
@@ -386,7 +393,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .main-content__side-menu__item p {
-    font-size: 2vh;
+    font-size: 3vw;
   }
 }
 
