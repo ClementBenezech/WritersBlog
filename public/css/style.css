@@ -121,7 +121,7 @@
     box-shadow: 0.2vw 0.2vw 1vw black;
   }
   50% {
-    bottom: 16vw;
+    margin-bottom: 1vh;
   }
   100% {
     box-shadow: 0.2vw 0.2vw 1vw black;
@@ -171,11 +171,11 @@ body #scrolltotop {
   /* Hidden by default */
   position: fixed;
   /* Fixed/sticky position */
-  bottom: 17vw;
+  bottom: 5vh;
   /* Place the button at the bottom of the page */
   right: 4vw;
   /* Place the button 30px from the right */
-  z-index: 99;
+  z-index: 3;
   /* Make sure it does not overlap */
   border: none;
   /* Remove borders */
@@ -195,15 +195,27 @@ body #scrolltotop {
   box-shadow: 0.2vw 0.2vw 1vw black;
   overflow: visible;
 }
+@media screen and (max-width: 1080px) {
+  body #scrolltotop {
+    width: 10vw;
+    height: 10vw;
+    bottom: 10vw;
+  }
+}
 body #scrolltotop i {
   font-size: 1vw;
+}
+@media screen and (max-width: 1080px) {
+  body #scrolltotop i {
+    font-size: 5vw;
+  }
 }
 body #scrolltotop:hover {
   /*background-color: $color-button-blog; Add a dark-grey background on hover */
   border: 0.4vw solid #1597ca;
   color: #1597ca;
   transform-origin: bottom;
-  animation: scale-btn-hover 1s ease-out infinite forwards;
+  animation: scale-btn-hover 0.5s ease-out infinite forwards;
 }
 
 .page-container {
@@ -262,8 +274,8 @@ body #scrolltotop:hover {
 .main-content__title-container__title h2 {
   margin: 0;
   padding: 0;
-  font-size: 1.5vw;
-  line-height: 1.5rem;
+  font-size: 1.15vw;
+  line-height: 1.15vw;
   border-bottom: 0.2vw solid #ffa600;
   width: 75%;
   padding-left: 5%;
@@ -706,116 +718,149 @@ body #scrolltotop:hover {
 }
 
 /*@import "./pages/index.scss";*/
-.bookgrid {
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  /*width: 80vw;*/
-  grid-gap: 0vw;
-  box-sizing: border-box;
-  overflow: hidden;
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.096);
-  /*background: linear-gradient(70deg, rgba(137, 208, 255), rgba(255, 255, 255));*/
-  /*box-shadow: 0 0 1vw black;*/
-  padding: 2vw;
-  border-bottom: 0.2vw solid #5da3ff;
-  border-top: 0.2vw solid #5da3ff;
-  /*&__element:nth-child(odd){
-      background-color: black;
-  }
-  &__element:nth-child(even){
-      background-color: rgb(218, 19, 19);
-  }*/
-}
-.bookgrid__books-container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-}
-.bookgrid__element {
-  height: 100%;
-  width: 100%;
-  border-radius: 0.5vw;
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  /*background-color: rgb(166, 179, 255);*/
-  z-index: 99;
-}
-.bookgrid__element > * {
-  display: none;
-}
-.bookgrid__element--0 {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  animation-name: element-enter-right-90;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--1 {
-  grid-row: 2/3;
-  grid-column: 2/3;
-  animation-name: element-enter-right-75;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--2 {
-  grid-row: 1/2;
-  grid-column: 3/4;
-  animation-name: element-enter-top-slow;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--3 {
-  grid-row: 2/3;
-  grid-column: 4/5;
-  animation-name: element-enter-top-fast;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--4 {
-  grid-row: 1/2;
-  grid-column: 5/6;
-  animation-name: element-enter-top-slow;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--5 {
-  grid-row: 2/3;
-  grid-column: 6/7;
-  animation-name: element-enter-left-75;
-  animation-duration: 2s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element--6 {
-  grid-row: 1/2;
-  grid-column: 7/8;
-  animation-name: element-enter-left-90;
-  animation-duration: 4s;
-  animation-fill-mode: forwards;
-}
-.bookgrid__element__image {
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: inherit;
-  border-radius: 0.5vw;
-  /*box-shadow: 0 0 1vw rgb(97, 97, 97);*/
-}
+/*.bookgrid {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    /*width: 80vw;
+    grid-gap: 0vw;
+    box-sizing: border-box;
+    overflow: hidden;
+    position:relative;
+    background-color: rgba(255, 255, 255, 0.096);
+    /*background: linear-gradient(70deg, rgba(137, 208, 255), rgba(255, 255, 255));*/
+/*box-shadow: 0 0 1vw black;
+    padding: 2vw;
+    border-bottom: 0.2vw solid rgb(93, 163, 255);
+    border-top: 0.2vw solid rgb(93, 163, 255);
 
+    /*&__element:nth-child(odd){
+        background-color: black;
+    }
+    &__element:nth-child(even){
+        background-color: rgb(218, 19, 19);
+    }
+
+    &__books-container{
+        display:flex;
+        flex-direction:row;
+        width: 100%;
+
+    }
+    &__element {
+        height: 100%;
+        width: 100%;
+        border-radius: 0.5vw;
+        position: relative;
+        display: flex;
+        flex-direction:row;
+
+
+
+
+        /*background-color: rgb(166, 179, 255);
+
+        & > * {
+            display:none;
+        }
+
+        z-index: 99;
+        &--0 {
+            grid-row: 1 / 2;
+            grid-column: 1 / 2;
+
+            animation-name: element-enter-right-90;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+
+        }
+        &--1 {
+            grid-row: 2 / 3;
+            grid-column: 2 / 3;
+
+                animation-name: element-enter-right-75;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+
+        }
+        &--2 {
+            grid-row: 1 / 2;
+            grid-column: 3 / 4;
+
+
+                animation-name: element-enter-top-slow;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+
+        }
+        &--3 {
+            grid-row: 2 / 3;
+            grid-column: 4 / 5;
+
+
+                animation-name: element-enter-top-fast;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+
+        }
+        &--4 {
+            grid-row: 1 / 2;
+            grid-column: 5 / 6;
+
+
+                animation-name: element-enter-top-slow;
+                animation-duration: 3s;
+                animation-fill-mode: forwards;
+
+
+        }
+        &--5 {
+            grid-row: 2 / 3;
+            grid-column: 6 / 7;
+
+                animation-name: element-enter-left-75;
+                animation-duration: 2s;
+                animation-fill-mode: forwards;
+
+        }
+        &--6 {
+            grid-row:  1 / 2;
+            grid-column: 7 / 8;
+
+            animation-name: element-enter-left-90;
+            animation-duration: 4s;
+            animation-fill-mode: forwards;
+
+        }
+
+
+        &__image {
+
+            display:block;
+            object-fit: cover;
+            width: 100%;
+            height:inherit;
+
+            border-radius: 0.5vw;
+            /*box-shadow: 0 0 1vw rgb(97, 97, 97);
+        }
+
+
+    }
+
+}*/
 .book {
   display: flex;
   flex-direction: column;
 }
 .book__element {
-  width: 100%;
+  width: 96%;
   box-sizing: border-box;
   border-radius: 1vw;
   position: relative;
   display: flex;
   flex-direction: row;
-  margin: 2vw;
+  margin: 2%;
   padding: 2vw;
   box-shadow: 0 0.2vw 0.2vw grey;
   /*background-color: white;*/
@@ -824,9 +869,27 @@ body #scrolltotop:hover {
   overflow: hidden;
   background: linear-gradient(120deg, white 30%, #ebebeb);
 }
+@media screen and (max-width: 1080px) {
+  .book__element {
+    flex-direction: column;
+    margin-bottom: 5vh;
+    background: rgba(0, 0, 0, 0.801);
+    color: white;
+  }
+}
 .book__element:nth-child(odd) {
   flex-direction: row-reverse;
   background: linear-gradient(320deg, white 30%, #ebebeb);
+}
+@media screen and (max-width: 1080px) {
+  .book__element:nth-child(odd) {
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.801);
+    color: white;
+  }
+}
+.book__element:last-child {
+  margin-bottom: 15vh;
 }
 .book__element__image {
   width: 15vw;
@@ -837,12 +900,24 @@ body #scrolltotop:hover {
   margin: 0 2vw;
   border-radius: 1vw;
 }
+@media screen and (max-width: 1080px) {
+  .book__element__image {
+    width: 100%;
+    height: auto;
+  }
+}
 .book__element__text-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  align-items: flex-end;
   width: 77%;
   padding: 1% 1%;
+}
+@media screen and (max-width: 1080px) {
+  .book__element__text-container {
+    width: 100%;
+  }
 }
 .book__element__text-container > * {
   font-family: "Lato";
@@ -859,7 +934,8 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .book__element__title {
-    font-size: 3vw;
+    font-size: 5.5vw;
+    margin-bottom: 2vw;
   }
 }
 .book__element__publisher {
@@ -868,20 +944,36 @@ body #scrolltotop:hover {
   margin-right: 2%;
   color: #6d6d6d;
 }
+@media screen and (max-width: 1080px) {
+  .book__element__publisher {
+    font-size: 4vw;
+    flex-basis: 80%;
+    color: #ffa600;
+  }
+}
 .book__element__date {
   font-size: 2vw;
   flex-basis: max-content;
   font-weight: bold;
   color: #6d6d6d;
 }
+@media screen and (max-width: 1080px) {
+  .book__element__date {
+    font-size: 4vw;
+    color: #ffa600;
+  }
+}
 .book__element__synopsis {
   font-size: 1.5vw;
+  white-space: pre-line;
   flex-basis: max-content;
   text-align: justify;
 }
 @media screen and (max-width: 1080px) {
   .book__element__synopsis {
-    font-size: 3vw;
+    font-size: 5vw;
+    text-justify: inter-character;
+    margin-top: 2vw;
   }
 }
 

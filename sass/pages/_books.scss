@@ -1,15 +1,15 @@
-.bookgrid {
+/*.bookgrid {
     display: grid;
     grid-template-rows: 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    /*width: 80vw;*/
+    /*width: 80vw;
     grid-gap: 0vw;
     box-sizing: border-box;
     overflow: hidden;
     position:relative;
     background-color: rgba(255, 255, 255, 0.096);
     /*background: linear-gradient(70deg, rgba(137, 208, 255), rgba(255, 255, 255));*/
-    /*box-shadow: 0 0 1vw black;*/
+    /*box-shadow: 0 0 1vw black;
     padding: 2vw;
     border-bottom: 0.2vw solid rgb(93, 163, 255);
     border-top: 0.2vw solid rgb(93, 163, 255);
@@ -19,12 +19,13 @@
     }
     &__element:nth-child(even){
         background-color: rgb(218, 19, 19);
-    }*/
+    }
 
     &__books-container{
         display:flex;
         flex-direction:row;
         width: 100%;
+        
     }
     &__element {
         height: 100%;
@@ -33,8 +34,11 @@
         position: relative;
         display: flex;
         flex-direction:row;
+        
+           
+
   
-        /*background-color: rgb(166, 179, 255);*/
+        /*background-color: rgb(166, 179, 255);
         
         & > * {
             display:none;
@@ -118,13 +122,13 @@
             height:inherit;
 
             border-radius: 0.5vw;
-            /*box-shadow: 0 0 1vw rgb(97, 97, 97);*/
+            /*box-shadow: 0 0 1vw rgb(97, 97, 97);
         }
 
 
     }
     
-}
+}*/
 
 .book {
     display: flex;
@@ -132,13 +136,19 @@
     
     
     &__element {
-        width: 100%;
+        width: 96%;
         box-sizing: border-box;
         border-radius: 1vw;
         position: relative;
         display: flex;
         flex-direction: row;
-        margin: 2vw;
+        @include mobile-only {
+            flex-direction:column;
+            margin-bottom: 5vh;
+            background:rgba(0, 0, 0, 0.801);
+            color:white;
+          }
+        margin: 2%;
         padding: 2vw;
         box-shadow: 0 0.2vw 0.2vw grey;
         /*background-color: white;*/
@@ -148,12 +158,26 @@
         background: linear-gradient(120deg, white 30%,  rgb(235, 235, 235));
         &:nth-child(odd) {
             flex-direction: row-reverse;
+            @include mobile-only {
+                flex-direction:column;
+                background:rgba(0, 0, 0, 0.801);
+                color:white;
+              }
             background: linear-gradient(320deg, white 30%,  rgb(235, 235, 235));
  
         }
+        &:last-child {
+            margin-bottom: 15vh;
+        }
+        
+
         &__image {
             width: 15vw;
             height: 22vw;
+            @include mobile-only {
+                width:100%;
+                height:auto;
+              }
             object-fit: cover;
             object-position: left;
             box-shadow: 0.2vw 0 1vw grey;
@@ -164,7 +188,12 @@
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
+                align-items: flex-end;
                 width: 77%;
+        
+                @include mobile-only {
+                    width:100%;
+                  }
                 padding: 1% 1%;
             & > * {
                 
@@ -182,7 +211,8 @@
         &__title {
             font-size: 2vw;
             @include mobile-only {
-                font-size: 3vw;
+                font-size: 5.5vw;
+                margin-bottom: 2vw;
             }
             flex-basis: max-content;
             width: 100%;
@@ -192,6 +222,11 @@
 
         &__publisher {
             font-size: 2vw;
+            @include mobile-only {
+                font-size: 4vw;
+                flex-basis: 80%;
+                color:$color-button-blog;
+              }
             flex-basis: max-content;
             margin-right: 2%;
             color:rgb(109, 109, 109);
@@ -199,6 +234,10 @@
         }
         &__date {
             font-size: 2vw;
+            @include mobile-only {
+                font-size: 4vw;
+                color:$color-button-blog;
+              }
             flex-basis: max-content;
             font-weight: bold;
             color:rgb(109, 109, 109);
@@ -206,11 +245,16 @@
 
         &__synopsis {
             font-size: 1.5vw;
+            white-space: pre-line;
+
             @include mobile-only {
-                font-size: 3vw;
+                font-size: 5vw;
+                text-justify: inter-character;
+                margin-top: 2vw;
             }
             flex-basis: max-content;
             text-align: justify;
+
             
         }
     }

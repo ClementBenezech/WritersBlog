@@ -9,11 +9,12 @@ body {
       box-sizing: border-box;
       width: 4vw;
       height: 4vw;
+      
       display: none; /* Hidden by default */
       position: fixed; /* Fixed/sticky position */
-      bottom: 17vw; /* Place the button at the bottom of the page */
+      bottom: 5vh; /* Place the button at the bottom of the page */
       right: 4vw; /* Place the button 30px from the right */
-      z-index: 99; /* Make sure it does not overlap */
+      z-index: 3; /* Make sure it does not overlap */
       border: none; /* Remove borders */
       outline: none; /* Remove outline */
       color: $color-button-blog;
@@ -25,8 +26,17 @@ body {
       border-radius: 5vw; /* Rounded corners *//* Increase font size */
       box-shadow: 0.2vw 0.2vw 1vw black;
       overflow:visible;
+
+      @include mobile-only {
+        width: 10vw;
+        height: 10vw;
+        bottom: 10vw;
+      }
       & i {
         font-size: 1vw;
+        @include mobile-only {
+          font-size: 5vw;
+        }
         
       }
       &:hover {
@@ -34,7 +44,7 @@ body {
         border: 0.4vw solid rgb(21, 151, 202);
         color: rgb(21, 151, 202);
         transform-origin: bottom;
-        animation: scale-btn-hover 1s ease-out infinite forwards;
+        animation: scale-btn-hover 0.5s ease-out infinite forwards;
       }
     }
     
@@ -95,8 +105,8 @@ body {
       & h2 {
           margin: 0;
           padding: 0;
-          font-size: 1.5vw;
-          line-height: 1.5rem;
+          font-size: 1.15vw;
+          line-height: 1.15vw;
           border-bottom: 0.2vw solid $color-button-blog;
           width: 75%;
           padding-left:5%;
