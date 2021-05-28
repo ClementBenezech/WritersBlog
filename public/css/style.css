@@ -173,8 +173,6 @@ body {
   display: flex;
   flex-direction: column;
   overflow-x: hidden;
-  min-height: 100vh;
-  width: 100vw;
   background: linear-gradient(0deg, rgba(231, 231, 231, 0.9), #030303);
 }
 body #scrolltotop {
