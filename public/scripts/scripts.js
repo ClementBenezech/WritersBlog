@@ -265,12 +265,13 @@ function createSideMenuEventListener ($element) {
 
 function createTitle($contentType, $icon) {
 	sectionTitle = createDivIn(document.getElementById("main-content"), "title", "div", "main-content__title-container"); // on créée le conteneur de titre
+	sectionSideMEnu = createDivIn(document.getElementById("main-content"), "main-content__side-menu", "div", "main-content__side-menu");
 	sectionTitle.innerHTML = "<div id ='main-content__title-container__title' class = 'main-content__title-container__title'>" // le titre
 	+$icon//le logo
 	+"<h2>"
 	+$contentType
 	+"</h2>"
-	+"<div id ='main-content__side-menu' class = 'main-content__side-menu'></div></div>";
+	
 	console.log('done creating title');
 	/*<i class='fas fa-book'></i> <i class='fab fa-hotjar'></i> <i class='fas fa-signature'></i>*/
 

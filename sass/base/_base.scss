@@ -73,6 +73,9 @@ body {
       flex-direction:column;
       min-height: 80vh;
       overflow-x: hidden;
+      overflow-y:visible;
+      padding-top: 10vw;
+
     }
     margin: -3vw auto -7vw auto;
     box-shadow: 0 0 1vw white;
@@ -96,7 +99,7 @@ body {
       border-right: 0.2vw solid $color-button-blog;
       align-content: flex-start;
       flex-wrap:wrap;
-      width: 10vw;
+      width: 20vw;
       @include mobile-only {
         width: 88vw;
         margin-bottom:1vh;
@@ -141,13 +144,18 @@ body {
   }
   &__side-menu {
     width: 15vw;
+    position: absolute;
+      top: 27vw;
+      left: 10vw;
     @include mobile-only {
       display:flex;
       flex-direction:row;
       width: 99vw;
       flex-wrap: nowrap;
       align-content: flex-start;
-      margin-top:3vh;
+      position: absolute;
+      top: 22vw;
+      left:30vw;
     }
     &__item {
       display: flex;
@@ -158,8 +166,9 @@ body {
  
         font-size: 3vw;
         @include mobile-only {
-          width:33%;
+          width:20%;
           align-content:flex-start;
+          font-size:1vw;
           
         }
         
@@ -181,8 +190,8 @@ body {
             margin-top: 2vw;
             font-size: 2vw;
             @include mobile-only {
-             font-size:5vh;
-              
+             font-size:5vw;
+            padding: 2vw;
             }
             border: 0.1rem solid rgb(21, 151, 202);
             &:hover {
