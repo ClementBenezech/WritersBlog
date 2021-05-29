@@ -292,11 +292,36 @@ function scrollFunction() {
 }
 
 
-window.onload = function(){
+window.onload = function(page){
 		scrolltotop = document.getElementById("scrolltotop");
 		// When the user scrolls down 20px from the top of the document, show the button
 		window.onscroll = function() {scrollFunction()};
-		getPostList();
+
+		const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const selectedPage = urlParams.get('page');
+
+        console.log(selectedPage);
+		
+		if (selectedPage != undefined) {
+			if (selectedPage == "home") {
+				getPostList();	
+			}
+			else if (selectedPage == "books") {
+				getBookList();
+			}
+			else if (selectedPage == "about") {
+				aboutContent();
+			}
+
+		}
+		else {
+			getPostList();
+		}
+		
+		
+
+		
 			
 }
 

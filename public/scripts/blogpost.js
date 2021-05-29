@@ -323,7 +323,7 @@ function topFunction() {
 
 document.getElementById('blog-posts').onclick = function () {
 	getPostList();
-    window.open('../../index.html', '_self');
+    window.open('../../index.html?page=home', '_self');
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
 	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
@@ -332,7 +332,7 @@ document.getElementById('blog-posts').onclick = function () {
 };
 
 document.getElementById('book-list').onclick = function () {
-	window.open('../../index.html', '_self');
+	window.open('../../index.html?page=books', '_self');
     getBookList();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
@@ -341,7 +341,7 @@ document.getElementById('book-list').onclick = function () {
 };
 
 document.getElementById('author').onclick = function () {
-	window.open('../../index.html', '_self');
+	window.open('../../index.html?page=about', '_self');
     aboutContent();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
