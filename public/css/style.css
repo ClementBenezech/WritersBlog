@@ -1200,6 +1200,7 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .blog__element__date {
+    max-width: 70%;
     font-size: 2vw;
     line-height: 4vw;
   }
