@@ -60,7 +60,7 @@ function getBlogPost($id) {
 
 				link = document.createElement('meta');
   				link.setAttribute('property', 'og:title');
-  				link.content = data['title'];
+  				link.content = "Anne Waddington, le blog";
   				document.getElementsByTagName('head')[0].appendChild(link);
 
 				document.title = data['title'];
