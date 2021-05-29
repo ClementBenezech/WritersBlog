@@ -213,7 +213,7 @@
             bottom: -2vw;
             z-index: 3;
             @include mobile-only {
-                max-width:70%;
+                width:70%;
                 font-size: 2vw;
                 line-height:4vw;
               }
