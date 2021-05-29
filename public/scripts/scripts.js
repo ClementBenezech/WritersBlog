@@ -204,7 +204,7 @@ function generateBlogPosts ($response) {
 
 								postContainer.addEventListener("click", function() {
 									/*getBlogPost(this.id)*/
-									window.open('/public/pages/blogpost.html?post='+this.id, '_self');
+									window.open('public/pages/blogpost.html?post='+this.id, '_self');
 								});
 
 								};
