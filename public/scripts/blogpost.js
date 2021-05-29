@@ -58,9 +58,9 @@ function getBlogPost($id) {
   				link.content = document.location;
   				document.getElementsByTagName('head')[0].appendChild(link);
 
-				var link = document.createElement('meta');
+				link = document.createElement('meta');
   				link.setAttribute('property', 'og:title');
-  				link.content = document.title;
+  				link.content = data['title'];
   				document.getElementsByTagName('head')[0].appendChild(link);
 
 				document.title = data['title'];
