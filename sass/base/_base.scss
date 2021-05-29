@@ -68,6 +68,7 @@ body {
     overflow: visible;
     width: 90vw;
     flex-direction: row;
+    
     @include mobile-only {
       width:100%;
       flex-direction:column;
@@ -75,6 +76,8 @@ body {
       overflow-x: hidden;
       overflow-y:visible;
       padding-top: 10vw;
+      justify-content: center;
+      
 
     }
     margin: -3vw auto -7vw auto;
@@ -256,27 +259,17 @@ h1 {
   
   .loader-spinner {
     @include loader-element;
-    border-top: 2vh solid $color-secondary;
-    border-bottom: 2vh solid $color-secondary;
-    border-left: 2vh solid white;
-    border-right: 2vh solid white;
+    border-top: 2px solid $color-secondary;
+    border-bottom: 2px solid $color-secondary;
+    border-left: 2px solid white;
+    border-right: 2px solid white;
     animation: spin 2s linear 2;
     animation-fill-mode: forwards;
     border-radius: 50%;
     width: 20vh;
     height: 20vh;
-    &::after {
-      font-family: "Font Awesome 5 Free";
-      content: '';
-      color:white;
-      font-size: 4vw;
-      font-weight:bold;
-      position: relative;
-      top: -6vw;
-      left: 3vw;
-      width: 20vh;
-      height: 20vh;
-    }
+    display:flex;
+
   }
   
   .loader-label {
@@ -288,11 +281,14 @@ h1 {
     height: 20vh;
     font-family: "Shrikhand", sans-serif;
     font-weight: 900;
-    font-size: 3vh;
     background-color: transparent;
     color:white;
     font-family: "Raleway";
     font-size: 5vw;
+    flex-direction:row;
+    justify-content:center;
+    align-items:center;
+    box-sizing:border-box;
  
     p {
       margin: auto;
