@@ -68,7 +68,13 @@ body {
     overflow: visible;
     width: 90vw;
     flex-direction: row;
-    
+    margin: -7vw auto -7vw auto;
+    box-shadow: 0 0 1vw white;
+    z-index: 2;
+    -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
+    clip-path: polygon(0 0, 3vw 100%, 100% 98%, 100% 3vw, 0 0);
+    display: flex;
+
     @include mobile-only {
       width:100%;
       flex-direction:column;
@@ -77,63 +83,76 @@ body {
       overflow-y:visible;
       padding-top: 10vw;
       justify-content: center;
+      margin: -3vw auto -7vw auto;
       
 
     }
-    margin: -3vw auto -7vw auto;
-    box-shadow: 0 0 1vw white;
-    z-index: 2;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
-    clip-path: polygon(0 0, 3vw 100%, 100% 98%, 100% 3vw, 0 0);
-    display: flex;
     
     & h2 {
       /*max-width: 40%;*/
-      border-bottom: 0.2vw solid rgb(50, 173, 255);
+      /*border-bottom: 0.2vw solid rgb(50, 173, 255);*/
       font-family:"Raleway";
       margin-left: 2%;
 
     }
   &__title-container {
+    margin-top: 0;
+    padding:0;
+    display: flex;
+    flex-direction:row;
+    width: 25vw;
+    justify-content:flex-end;
+    align-content: flex-end;
+    border-right: 0.2vw solid $color-button-blog;
+    flex-wrap:nowrap;
+    max-height: 10vh;
     &__title {
       display: flex;
       flex-direction:row;
-      height: 100%;
-      border-right: 0.2vw solid $color-button-blog;
+      font-family: 'DM Sans';
       align-content: flex-start;
+      align-items: flex-end;
       flex-wrap:wrap;
-      width: 20vw;
+      width: 100%;
+      padding-right: 3vw;
+      justify-content:flex-end;
+     
+
       @include mobile-only {
         width: 88vw;
         margin-bottom:1vh;
         border-right: none;
       }
-      padding-top: 5vw;
+
       & > * {
           padding-bottom: 1vw;
       }
 
 
       & h2 {
-          margin: 0;
-          padding: 0;
           font-size: 1.15vw;
           line-height: 1.15vw;
-          border-bottom: 0.2vw solid $color-button-blog;
-          width: 75%;
+          /*border-bottom: 0.2vw solid $color-button-blog;*/
+          margin:0;
+          padding: 0;
           padding-left:5%;
-          text-align: center;
+          text-align: end;
+          width: 75%;
+          margin-left: 2%;
+  
           @include mobile-only {
             font-size:2vh;
             text-align:left;
             width:80%;
+            
           }
       }
       & i {
-          border-bottom: 0.2vw solid $color-button-blog;
-          width: 20%;
-          font-size: 1.5rem;
-          line-height: 1.5rem;
+          /*border-bottom: 0.2vw solid $color-button-blog;*/
+          margin: 0;
+          padding: 0;
+          font-size: 1.15vw;
+          line-height: 1.15vw;
           text-align: right;
           @include mobile-only {
             text-align: left;
@@ -147,9 +166,10 @@ body {
   }
   &__side-menu {
     width: 15vw;
-    position: absolute;
-      top: 30vw;
+    position: fixed;
+      top: 55vh;
       left: 10vw;
+      z-index:99;
     @include mobile-only {
       display:flex;
       flex-direction:row;
@@ -157,7 +177,7 @@ body {
       flex-wrap: nowrap;
       align-content: flex-start;
       position: absolute;
-      top: 22vw;
+      top: 17vw;
       left:30vw;
     }
     &__item {
@@ -169,7 +189,7 @@ body {
  
         font-size: 3vw;
         @include mobile-only {
-          width:20vw;
+          width:15vw;
           align-content:flex-start;
           font-size:1vw;
           
@@ -181,10 +201,10 @@ body {
             box-sizing:border-box;
             display:flex;
             background-color: rgb(255, 255, 255);
-            border-radius: 5rem;
+            border-radius: 50%;
             transition: transform 100ms ease-in-out;
-            width:4vw;
-            height:4vw;
+            width:3vh;
+            height:3vh;
             align-items:center;
             justify-content:center;
             color: rgb(21, 151, 202);
@@ -193,6 +213,8 @@ body {
             margin-top: 2vw;
             font-size: 2vw;
             @include mobile-only {
+              width:4vh;
+            height:4vh;
              font-size:5vw;
             padding: 2vw;
             }
@@ -208,7 +230,7 @@ body {
             padding: 0;
             font-size: 1vw;
             @include mobile-only {
-              font-size: 3vw;
+              font-size: 2vw;
             }
           }
     }

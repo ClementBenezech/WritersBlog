@@ -234,10 +234,22 @@ function getBlogPostCategories (){
 
 						var obj = {tagName: 'Signatures', icon: "<i class='fas fa-signature'></i>"};
 						icons.push(obj);
-					
 
-						icons.forEach(element => createSideMenuItem(element));
-						icons.forEach(element => createSideMenuEventListener(element));
+						var pageName = location.href.split("/").slice(-1); 
+						console.log("pageName");
+						console.log(pageName[0].substring(0,7));
+
+						if (pageName[0].substring(0,8) === "blogpost") {
+							const backIcon = { tagName: 'retour', icon: "<i class='fas fa-undo'></i>"};	
+							createSideMenuItem(backIcon);
+							document.getElementById("main-content__side-menu__item--"+backIcon['tagName']).addEventListener("click", function() {window.open('../../index.html', '_self')});
+						}
+						else {
+							icons.forEach(element => createSideMenuItem(element));
+							icons.forEach(element => createSideMenuEventListener(element));
+						}
+						
+						
 					})
 
 })
@@ -263,6 +275,8 @@ function createSideMenuEventListener ($element) {
 		document.getElementById("main-content__side-menu__item--"+$element['tagName']).addEventListener("click", function() {getPostList($element['tagName'])});
 
 }
+
+
 
 //Creates the side menu, building the containers for utltérior filling
 
@@ -305,6 +319,8 @@ window.onload = function(){
         const blogpostId = urlParams.get('post');
 
         console.log(blogpostId);
+
+		getBlogPostCategories ();
 
         getBlogPost (blogpostId);
 			

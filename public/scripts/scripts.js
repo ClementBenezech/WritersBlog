@@ -234,10 +234,25 @@ function getBlogPostCategories (){
 
 						var obj = {tagName: 'Signatures', icon: "<i class='fas fa-signature'></i>"};
 						icons.push(obj);
-					
 
-						icons.forEach(element => createSideMenuItem(element));
-						icons.forEach(element => createSideMenuEventListener(element));
+						
+						
+
+
+						
+
+						var pageName = location.href.split("/").slice(-1); 
+
+						if (pageName === "blogpost.html") {
+							const backIcon = { tagName: 'tag', icon: "<i class='fas fa-undo'></i>"};	
+							createSideMenuItem(backIcon);
+						}
+						else {
+							icons.forEach(element => createSideMenuItem(element));
+							icons.forEach(element => createSideMenuEventListener(element));
+						}
+						
+						
 					})
 
 })

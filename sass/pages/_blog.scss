@@ -35,6 +35,11 @@
    &__posts-container {
         width:100%;
         margin-left: 1%;
+        display:flex;
+        flex-direction:row;
+        flex-wrap: wrap;
+        padding-top:3vh;
+        justify-content: space-evenly;
     }
     /*&__post-filters
     {
@@ -74,14 +79,15 @@
         right: 0vw;
         float: right;
         padding-top: 0vw;
-        margin-left: 1vw;
         display: flex;
             flex-direction: row;
             justify-content:center;
         margin-bottom: 5vw;
+        box-sizing:border-box;
         /*background-color: white;*/
  
         flex-wrap: wrap;
+        width: 48%;
         
         /*transition: transform 200ms ease-in-out;*/
 
@@ -130,6 +136,7 @@
                 z-index:1;
                 object-fit: cover;
             object-position: left;
+            border-radius: 1vw 1vw 0 0;
             @include mobile-only {
 
             }
@@ -198,7 +205,7 @@
             color: darken($color-secondary, 50%);
             text-align:center;
             clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);*/
-            font-size: 2vw;
+            font-size: 1vw;
             line-height:3vw;
             max-width:45%;
             margin-left:0;
@@ -237,8 +244,8 @@
             text-shadow: 0.1vw 0.1vw 0.3vw white;
             border-radius: 0 0 3vw 3vw;
             border: 0.2vw solid lightblue;*/
-            font-size: 2vw;
-            line-height: 3vw;
+            font-size: 1vw;
+            line-height: 1.5vw;
             border-radius: 0;
             border-radius: 1vw;
             margin-top: -25vh;
@@ -260,6 +267,7 @@
 
             @include mobile-only {
                 font-size: 3vw;
+                line-height: 3.5vw;
               }
 
             
