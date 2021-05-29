@@ -53,8 +53,6 @@ function getBlogPost($id) {
 
 				console.log("data title:"+data['title']);
 
-				document.title = data['title'];
-
 				var link = document.createElement('meta');
   				link.setAttribute('property', 'og:url');
   				link.content = document.location;
@@ -64,6 +62,10 @@ function getBlogPost($id) {
   				link.setAttribute('property', 'og:title');
   				link.content = document.title;
   				document.getElementsByTagName('head')[0].appendChild(link);
+
+				document.title = data['title'];
+
+				
 				
 
 				/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
