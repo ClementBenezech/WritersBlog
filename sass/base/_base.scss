@@ -265,6 +265,18 @@ h1 {
     border-radius: 50%;
     width: 20vh;
     height: 20vh;
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      content: '';
+      color:white;
+      font-size: 4vw;
+      font-weight:bold;
+      position: relative;
+      top: -6vw;
+      left: 3vw;
+      width: 20vh;
+      height: 20vh;
+    }
   }
   
   .loader-label {
@@ -281,11 +293,13 @@ h1 {
     color:white;
     font-family: "Raleway";
     font-size: 5vw;
+ 
     p {
       margin: auto;
       opacity: 0;
       animation: fade-in-rotate 4s;
       animation-fill-mode: forwards;
+      
     }
   }
 

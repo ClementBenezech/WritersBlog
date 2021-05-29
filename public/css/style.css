@@ -457,6 +457,18 @@ body #scrolltotop:hover {
   width: 20vh;
   height: 20vh;
 }
+.loader-spinner::after {
+  font-family: "Font Awesome 5 Free";
+  content: "";
+  color: white;
+  font-size: 4vw;
+  font-weight: bold;
+  position: relative;
+  top: -6vw;
+  left: 3vw;
+  width: 20vh;
+  height: 20vh;
+}
 
 .loader-label {
   position: absolute;
