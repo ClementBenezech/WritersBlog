@@ -700,7 +700,7 @@ body #scrolltotop:hover {
   width: 9vw;
   height: 5vw;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   /*-webkit-clip-path: polygon(0 100%, 100% 90%, 10% 0);
   clip-path: polygon(0 100%, 100% 90%, 10% 0);*/
@@ -714,7 +714,7 @@ body #scrolltotop:hover {
     height: 20vh;
     color: #23b9ff;
     font-size: 12vw;
-    justify-content: space-evenly;
+    align-content: flex-start;
   }
 }
 @media screen and (max-width: 1080px) {
