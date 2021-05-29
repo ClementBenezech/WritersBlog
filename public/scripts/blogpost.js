@@ -204,7 +204,7 @@ function generateBlogPosts ($response) {
 
 								postContainer.addEventListener("click", function() {
 									/*getBlogPost(this.id)*/
-									window.open('/public/pages/blogpost.html?post='+this.id, '_self');
+									window.open('/public/pages/blogpost.html', '_self');
 								});
 
 								};
@@ -296,7 +296,17 @@ window.onload = function(){
 		scrolltotop = document.getElementById("scrolltotop");
 		// When the user scrolls down 20px from the top of the document, show the button
 		window.onscroll = function() {scrollFunction()};
-		getPostList();
+		/*getPostList();*/
+
+        const queryString = window.location.search;
+
+        const urlParams = new URLSearchParams(queryString);
+
+        const blogpostId = urlParams.get('post');
+
+        console.log(blogpostId);
+
+        getBlogPost (blogpostId);
 			
 }
 
@@ -308,8 +318,12 @@ function topFunction() {
 } 
 
 
+
+
+
 document.getElementById('blog-posts').onclick = function () {
 	getPostList();
+    window.open('/index.html', '_self');
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
 	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
@@ -318,7 +332,8 @@ document.getElementById('blog-posts').onclick = function () {
 };
 
 document.getElementById('book-list').onclick = function () {
-	getBookList();
+	window.open('/index.html', '_self');
+    getBookList();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
 	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);
@@ -326,7 +341,8 @@ document.getElementById('book-list').onclick = function () {
 };
 
 document.getElementById('author').onclick = function () {
-	aboutContent();
+	window.open('/index.html', '_self');
+    aboutContent();
 	document.getElementById('main-menu').classList.remove('main-menu--show');
 	document.getElementById('main-menu').classList.add('main-menu--hide');
 	document.getElementById('nav-expand').removeEventListener("click", hideMenu, false);

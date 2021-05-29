@@ -328,7 +328,7 @@ body #scrolltotop:hover {
 .main-content__side-menu {
   width: 15vw;
   position: absolute;
-  top: 27vw;
+  top: 30vw;
   left: 10vw;
 }
 @media screen and (max-width: 1080px) {
@@ -1088,7 +1088,7 @@ body #scrolltotop:hover {
   position: relative;
   right: 0vw;
   float: right;
-  padding-top: 5vw;
+  padding-top: 0vw;
   margin-left: 1vw;
   display: flex;
   flex-direction: row;
@@ -1163,6 +1163,7 @@ body #scrolltotop:hover {
   box-shadow: none;
   display: inline-block;
   color: #005d89;
+  font-family: "DM Sans";
 }
 .blog__element__publisher {
   font-size: 2vw;
@@ -1174,7 +1175,7 @@ body #scrolltotop:hover {
   /*font-size: 1vw;
   font-weight: 100;
   color:rgb(109, 109, 109);
-  font-family: 'Lato';
+
   text-align:end;
   background-color:white;
   width: 100%;
@@ -1183,7 +1184,7 @@ body #scrolltotop:hover {
   text-align:center;
   clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);*/
   font-size: 2vw;
-  line-height: 4vw;
+  line-height: 3vw;
   max-width: 45%;
   margin-left: 0;
   z-index: 0;
@@ -1193,12 +1194,13 @@ body #scrolltotop:hover {
   animation: poping-blog-post-date 1s ease-out forwards;
   position: relative;
   text-align: center;
+  font-family: "DM Sans";
   bottom: -2vw;
   z-index: 3;
 }
 @media screen and (max-width: 1080px) {
   .blog__element__date {
-    font-size: 3vw;
+    font-size: 2vw;
     line-height: 4vw;
   }
 }
@@ -1238,6 +1240,7 @@ body #scrolltotop:hover {
   font-family: "DM Sans";
   text-align: justify;
   white-space: pre-line;
+  display: inline;
 }
 @media screen and (max-width: 1080px) {
   .blog__element__synopsis {
