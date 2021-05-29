@@ -50,6 +50,10 @@ function getBlogPost($id) {
 				
 				//On insère le src de la balise image
 				postImage.src = data['images'][0]['url'];
+
+				console.log("data title:"+data['title']);
+
+				document.title = data['title'];
 				
 
 				/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
