@@ -1,3 +1,5 @@
+/*main scripts:/
+
 const strapiURL = 'https://cbd-strapi.herokuapp.com/';
 let postContainer = new Array(20);
 let i = 0;
