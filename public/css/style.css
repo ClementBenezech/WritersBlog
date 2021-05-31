@@ -345,7 +345,7 @@ body #scrolltotop:hover {
 .main-content__side-menu {
   width: 15vw;
   position: fixed;
-  top: 55vh;
+  top: 39vh;
   left: 10vw;
   z-index: 99;
 }
@@ -1029,7 +1029,7 @@ body #scrolltotop:hover {
 .book__element__synopsis {
   font-size: 1.5vw;
   white-space: pre-line;
-  font-size: 3.5vw;
+  font-size: 1.5vw;
   flex-basis: max-content;
   text-align: justify;
 }
@@ -1112,19 +1112,20 @@ body #scrolltotop:hover {
   flex-wrap: wrap;
   padding-top: 3vh;
   justify-content: space-evenly;
+  align-items: center;
 }
 .blog__element {
   position: relative;
   right: 0vw;
   padding-top: 0vw;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-direction: column;
   margin-bottom: 5vw;
   box-sizing: border-box;
+  align-items: center;
   /*background-color: white;*/
   flex-wrap: wrap;
-  width: 48%;
+  width: 40%;
   /*transition: transform 200ms ease-in-out;*/
 }
 @media screen and (max-width: 1080px) {
@@ -1138,14 +1139,6 @@ body #scrolltotop:hover {
 .blog__element:hover {
   transform-origin: top left;
   /*animation: to-primary 1s ease-in-out forwards;*/
-}
-.blog__element:nth-child(odd) {
-  flex-direction: row-reverse;
-}
-@media screen and (max-width: 1080px) {
-  .blog__element:nth-child(odd) {
-    flex-direction: row;
-  }
 }
 .blog__element__image {
   /*float: left;           
@@ -1165,7 +1158,7 @@ body #scrolltotop:hover {
   z-index: 1;
   object-fit: cover;
   object-position: left;
-  border-radius: 1vw 1vw 0 0;
+  border-radius: 0.2vw;
 }
 .blog__element__title {
   /*font-size: 3vw;
@@ -1185,7 +1178,7 @@ body #scrolltotop:hover {
   background-color: rgba(255, 255, 255, 0.87);
   text-align: center;
   position: relative;
-  top: -22vh;
+  top: -12vh;
   max-width: 50vw;
   margin-right: 0;
   border: none;
@@ -1193,6 +1186,7 @@ body #scrolltotop:hover {
   display: inline-block;
   color: #005d89;
   font-family: "DM Sans";
+  border-radius: 0.1vw;
 }
 .blog__element__publisher {
   font-size: 2vw;
@@ -1213,8 +1207,9 @@ body #scrolltotop:hover {
   text-align:center;
   clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);*/
   font-size: 1vw;
-  line-height: 3vw;
-  max-width: 45%;
+  line-height: 1vw;
+  max-width: 55%;
+  max-height: 3vw;
   margin-left: 0;
   z-index: 0;
   padding-bottom: 0vw;
@@ -1224,14 +1219,20 @@ body #scrolltotop:hover {
   position: relative;
   text-align: center;
   font-family: "DM Sans";
-  bottom: -2vw;
+  bottom: -1vw;
   z-index: 3;
+  box-sizing: border-box;
+  padding: 0.5vw;
+  border-radius: 0.5vw;
+  box-shadow: 0.1vw 0.1vwpx black 0.1vw;
 }
 @media screen and (max-width: 1080px) {
   .blog__element__date {
     width: 70%;
     font-size: 2vw;
-    line-height: 4vw;
+    line-height: 2vw;
+    max-height: 4vw;
+    bottom: -1.5vw;
   }
 }
 .blog__element__synopsis {

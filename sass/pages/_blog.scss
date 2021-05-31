@@ -39,6 +39,7 @@
         flex-wrap: wrap;
         padding-top:3vh;
         justify-content: space-evenly;
+        align-items: center;
     }
     /*&__post-filters
     {
@@ -78,14 +79,14 @@
         right: 0vw;
         padding-top: 0vw;
         display: flex;
-            flex-direction: row;
-            justify-content:space-around;
+        flex-direction: column;
         margin-bottom: 5vw;
         box-sizing:border-box;
+        align-items: center;
         /*background-color: white;*/
  
         flex-wrap: wrap;
-        width: 48%;
+        width: 40%;
         
         /*transition: transform 200ms ease-in-out;*/
 
@@ -106,15 +107,11 @@
 
         }
         
-        &:nth-child(odd) {
-            flex-direction: row-reverse;
-            @include mobile-only {
-                flex-direction:row;
-            }
+
 
             
  
-        }
+  
         &__image {
             /*float: left;           
             width: 15vw;
@@ -133,7 +130,7 @@
                 z-index:1;
                 object-fit: cover;
             object-position: left;
-            border-radius: 1vw 1vw 0 0;
+            border-radius: 0.2vw;
             @include mobile-only {
 
             }
@@ -168,7 +165,7 @@
             text-align:center;
 
             position: relative;
-            top: -22vh;
+            top: -12vh;
             max-width: 50vw;
 
             margin-right:0;
@@ -177,6 +174,7 @@
             display:inline-block;
             color: darken($color-secondary, $amount: 30);
             font-family: 'DM Sans';
+            border-radius: 0.1vw;
 
             @include mobile-only {
                 
@@ -203,8 +201,9 @@
             text-align:center;
             clip-path: polygon(9% 0, 91% 0, 100% 100%, 0% 100%);*/
             font-size: 1vw;
-            line-height:3vw;
-            max-width:45%;
+            line-height:1vw;
+            max-width:55%;
+            max-height: 3vw;
             margin-left:0;
             z-index:0;
             padding-bottom: 0vw;
@@ -214,12 +213,20 @@
             position:relative;
             text-align: center;
             font-family: 'DM Sans';
-            bottom: -2vw;
+            bottom: -1vw;
             z-index: 3;
+            box-sizing: border-box;
+            padding: 0.5vw;
+            border-radius: 0.5vw;
+            box-shadow: 0.1vw 0.1vwpx black 0.1vw;
             @include mobile-only {
                 width:70%;
                 font-size: 2vw;
-                line-height:4vw;
+                line-height:2vw;
+                max-height: 4vw;
+                bottom: -1.5vw;
+ 
+
               }
         }
 

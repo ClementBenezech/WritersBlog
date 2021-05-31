@@ -176,13 +176,15 @@ function generateBlogPosts ($response) {
 						createTitle("Blog", "<i class='fas fa-feather-alt'></i>");
 						getBlogPostCategories();
 						postsContainer = createDivIn(document.getElementById("main-content"), "blog__posts-container", "div", "blog__posts-container");
-
-							for (i = 0; i < Object.keys($response).length; i++)
+						console.log($response);
+						$response.sort((a, b) => a.published_at < b.published_at && 1 || -1)
+						
+						for (i = 0; i < Object.keys($response).length; i++)
 							{
 								const data = $response[i]; //Dans une variable data, on met le Ième enregistrement renvoyé par l'API
 								/*currentpost = "post"+i; //on définit la classe à donner à l'élément pour son positionnement dans la grid.*/
 								
-								postContainer = createDivIn(postsContainer, data['id'], "div", "blog__element blog__element--"+i);
+								postContainer = createDivIn(postsContainer, data['id'], "div", "blog__element blog__element");
 
 								postDateTag = createDivIn(postContainer, "date_tag", "div", "blog__element__date");
 								postImage = createDivIn(postContainer, "image", "img", "blog__element__image");
