@@ -274,7 +274,7 @@ h1 {
     background-color: $color-background-primary;
     z-index: $maximum-index;
     animation: hide-load-screen;
-    animation-delay: 4s;
+    animation-delay: 2s;
     animation-duration: 1s;
     animation-fill-mode: forwards;
   }
@@ -367,6 +367,9 @@ h1 {
       animation: fade-in-rotate 4s;
       animation-fill-mode: forwards;
       animation-iteration-count: infinite;
+      & i {
+        color: $color-button-blog;
+      }
     }
   }
 
