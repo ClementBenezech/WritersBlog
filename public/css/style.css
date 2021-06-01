@@ -1113,9 +1113,7 @@ body #scrolltotop:hover {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding-top: 3vh;
   justify-content: space-evenly;
-  align-items: center;
 }
 .blog__element {
   position: relative;
