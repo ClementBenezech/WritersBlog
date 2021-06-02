@@ -1248,9 +1248,11 @@ body #scrolltotop:hover {
 }
 @media screen and (max-width: 1080px) {
   .blog__element__url a {
-    font-size: 2vw;
-    line-height: 2vw;
-    max-height: 4vw;
+    font-size: 3vw;
+    line-height: 3vw;
+    font-family: "DM Sans";
+    padding: 0;
+    width: 100%;
   }
 }
 .blog__element__synopsis {
