@@ -48,7 +48,15 @@ function getBlogPost($id) {
 				postTitle = createDivIn(postContainer, "title", "div", "blog__element__title");
 				postContent = createDivIn(postContainer, "text", "div", "blog__element__synopsis");
 				
-				//On insère le src de la balise image
+				if (data['URL'] != null)
+				{
+					postUrl = createDivIn(postContainer, "url", "div", "blog__element__url");
+					postUrl.innerHTML = "<a href = "+data['URL']+">"+data['URL']+"</a>";
+
+				}
+				
+				
+				//On insère le src de la balise image et on crée les balises meta (mais ça ne sert à rienvu que facebook ne lis pas le js
 				postImage.src = data['images'][0]['url'];
 
 				console.log("data title:"+data['title']);
@@ -71,9 +79,9 @@ function getBlogPost($id) {
 				/*On insère le contenu renvoyé par l'api dans les divs apropriés.*/
 				postTitle.textContent = data['title'];
 				console.log(data['text'].substring(0,10));
-				postContent.textContent = (data['text'])+" ...";
+				postContent.textContent = data['text']/*+" ..."*/;
 				postDateTag.textContent = data['tag']+" / "+data['published_at'].substring(0,10);
-				console.log(data['published_at'].substring(0,10));
+				
 
 
 				

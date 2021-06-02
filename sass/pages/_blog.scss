@@ -229,6 +229,17 @@
               }
         }
 
+        &__url {
+            & a {
+                width:90%;
+                height: 100%;
+                font-size: 1vw;
+                color: $color-secondary;
+                padding: 2vw 2vw 2vw 2vw;
+                display:block;
+            }
+        }
+
         &__synopsis {
             /*font-size: 1.5rem;
             line-height: 2rem;
