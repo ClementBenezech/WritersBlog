@@ -1,376 +1,359 @@
 body {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    min-height: 100vh;
-    width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  min-height: 100vh;
+  width: 100vw;
+  /*  background: black; */
+  object-fit: cover;
+  background-color: black;
+  @include mobile-only {
+    position: relative;
+  }
+  & #scrolltotop {
+    box-sizing: border-box;
+    width: 4vw;
+    height: 4vw;
+
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed/sticky position */
+    bottom: 5vh; /* Place the button at the bottom of the page */
+    right: 4vw; /* Place the button 30px from the right */
+    z-index: 3; /* Make sure it does not overlap */
+    border: none; /* Remove borders */
+    outline: none; /* Remove outline */
+    color: $color-button-blog;
+    /* Set a background color */
+    background-color: white;
+    border: 0.3vw solid $color-button-blog;
+    cursor: pointer; /* Add a mouse pointer on hover */
+    padding: 1vw; /* Some padding */
+    border-radius: 5vw; /* Rounded corners */ /* Increase font size */
+    box-shadow: 0.2vw 0.2vw 1vw black;
+    overflow: visible;
+
     @include mobile-only {
-      position:relative;
-
+      width: 10vw;
+      height: 10vw;
+      bottom: 10vw;
     }
-    background: linear-gradient(0deg, rgb(231, 231, 231, 0.9), rgb(3, 3, 3));
-    & #scrolltotop {
-      box-sizing: border-box;
-      width: 4vw;
-      height: 4vw;
-      
-      display: none; /* Hidden by default */
-      position: fixed; /* Fixed/sticky position */
-      bottom: 5vh; /* Place the button at the bottom of the page */
-      right: 4vw; /* Place the button 30px from the right */
-      z-index: 3; /* Make sure it does not overlap */
-      border: none; /* Remove borders */
-      outline: none; /* Remove outline */
-      color: $color-button-blog;
-      /* Set a background color */
-      background-color: white; 
-      border: 0.3vw solid $color-button-blog;
-      cursor: pointer; /* Add a mouse pointer on hover */
-      padding: 1vw; /* Some padding */
-      border-radius: 5vw; /* Rounded corners *//* Increase font size */
-      box-shadow: 0.2vw 0.2vw 1vw black;
-      overflow:visible;
-
+    & i {
+      font-size: 1vw;
       @include mobile-only {
-        width: 10vw;
-        height: 10vw;
-        bottom: 10vw;
-      }
-      & i {
-        font-size: 1vw;
-        @include mobile-only {
-          font-size: 5vw;
-        }
-        
-      }
-      &:hover {
-        /*background-color: $color-button-blog; Add a dark-grey background on hover */
-        border: 0.4vw solid rgb(21, 151, 202);
-        color: rgb(21, 151, 202);
-        transform-origin: bottom;
-        animation: scale-btn-hover 0.5s ease-out infinite forwards;
+        font-size: 5vw;
       }
     }
-    
-   
+    &:hover {
+      /*background-color: $color-button-blog; Add a dark-grey background on hover */
+      border: 0.4vw solid rgb(21, 151, 202);
+      color: rgb(21, 151, 202);
+      transform-origin: bottom;
+      animation: scale-btn-hover 0.5s ease-out infinite forwards;
+    }
+  }
 }
 
 .page-container {
-    max-width: 1920px;
-    /*background-image: url("../../public/images/background.png");*/
-    z-index: 99;
-    margin: 0 auto;
+  max-width: 1920px;
+  /*background-image: url("../../public/images/background.png");*/
+  z-index: 99;
 }
 .main-content {
-    box-sizing: border-box;
-    background: linear-gradient(0deg,rgb(255, 255, 255) 90%, rgb(231, 231, 231));
-    padding: 5vw 3vw 3vw 5vw;
-    overflow: visible;
-    width: 90vw;
-    flex-direction: row;
-    margin: -7vw auto -7vw auto;
-    box-shadow: 0 0 1vw white;
-    z-index: 2;
-    -webkit-clip-path: polygon(0 0, 0 100%, 100% 97%, 100% 3%, 0 0);
-    clip-path: polygon(0 0, 3vw 100%, 100% 98%, 100% 3vw, 0 0);
-    display: flex;
+  box-sizing: border-box;
+  overflow: visible;
+  width: 92vw;
+  flex-direction: row;
+  margin-left: 5vw;
+  margin-right: 3vw;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
 
-    @include mobile-only {
-      width:100%;
-      flex-direction:column;
-      min-height: 80vh;
-      overflow-x: hidden;
-      overflow-y:visible;
-      padding-top: 10vw;
-      justify-content: center;
-      margin: -3vw auto -7vw auto;
-      
+  @include mobile-only {
+    width: 100%;
+    flex-direction: column;
+    min-height: 80vh;
+    overflow-x: hidden;
+    overflow-y: visible;
+    padding-top: 10vh;
+    justify-content: center;
+    margin: -3vw auto -7vw auto;
+  }
 
-    }
-    
-    & h2 {
-      /*max-width: 40%;*/
-      /*border-bottom: 0.2vw solid rgb(50, 173, 255);*/
-      font-family:"Raleway";
-      margin-left: 2%;
-
-    }
+  & h2 {
+    /*max-width: 40%;*/
+    /*border-bottom: 0.2vw solid rgb(50, 173, 255);*/
+    font-family: "Raleway";
+    margin-left: 2%;
+  }
   &__title-container {
     margin-top: 0;
-    padding:0;
     display: flex;
-    flex-direction:row;
-    width: 25vw;
-    justify-content:flex-end;
-    align-content: flex-end;
-    border-right: 0.2vw solid $color-button-blog;
-    flex-wrap:nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-content: flex-start;
+    /* border-right: 0.2vw solid rgb(201, 37, 37); */
+    flex-wrap: nowrap;
     max-height: 10vh;
+
+    margin: 0 auto;
+    overflow: visible;
+
+    @include mobile-only {
+      width: calc(100% - 24px);
+      padding-left: 48px;
+    }
     &__title {
       display: flex;
-      flex-direction:row;
-      font-family: 'DM Sans';
+      flex-direction: row;
+      font-family: "DM Sans";
       align-content: flex-start;
-      align-items: flex-end;
-      flex-wrap:wrap;
+      align-items: center;
+      flex-wrap: nowrap;
       width: 100%;
-      padding-right: 3vw;
-      justify-content:flex-end;
-     
+      justify-content: space-between;
+      color: white;
+      gap: 8px;
 
       @include mobile-only {
-        width: 88vw;
-        margin-bottom:1vh;
+        width: fit-content;
+        margin-bottom: 1vh;
         border-right: none;
+        gap: 48px;
       }
 
       & > * {
-          padding-bottom: 1vw;
+        padding-bottom: 1vw;
       }
-
 
       & h2 {
-          font-size: 1.15vw;
-          line-height: 1.15vw;
-          /*border-bottom: 0.2vw solid $color-button-blog;*/
-          margin:0;
-          padding: 0;
-          padding-left:5%;
-          text-align: end;
-          width: 75%;
-          margin-left: 2%;
-  
-          @include mobile-only {
-            font-size:2vh;
-            text-align:left;
-            width:80%;
-            
-          }
+        font-size: 1.15vw;
+        line-height: 1.15vw;
+        /*border-bottom: 0.2vw solid $color-button-blog;*/
+        margin: 0;
+        padding: 0;
+        text-align: end;
+        width: 75%;
+        margin-left: 2%;
+
+        @include mobile-only {
+          font-size: 2vh;
+          text-align: left;
+          width: 80%;
+        }
       }
       & i {
-          /*border-bottom: 0.2vw solid $color-button-blog;*/
-          margin: 0;
-          padding: 0;
-          font-size: 1.15vw;
-          line-height: 1.15vw;
-          text-align: right;
-          @include mobile-only {
-            text-align: left;
-            width: 8%;
-          }
-          color: rgb(21, 151, 202);
+        /*border-bottom: 0.2vw solid $color-button-blog;*/
+        margin: 0;
+        padding: 0;
+        font-size: 1.15vw;
+        line-height: 1.15vw;
+        text-align: right;
+        @include mobile-only {
+          text-align: left;
+          width: 20%;
+          font-size: 36px;
+        }
+        color: $color-secondary;
       }
-  
-      
     }
   }
   &__side-menu {
-    width: 15vw;
-    position: fixed;
-      top: 39vh;
-      left: 10vw;
-      z-index:99;
+    width: 60px;
+    position: absolute;
+    top: 196px;
+    left: 80px;
+    z-index: 99;
     @include mobile-only {
-      display:flex;
-      flex-direction:row;
-      width: 60vw;
+      display: flex;
+      flex-direction: row;
+      width: min-content;
       flex-wrap: nowrap;
       align-content: flex-start;
       position: absolute;
-      top: 17vw;
-      left:30vw;
+      top: 12vh;
+      right: 48px;
+      left: unset;
     }
     &__item {
       display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        width: 100%;
-        align-items:center;
- 
-        font-size: 3vw;
+      flex-direction: column;
+      justify-content: space-around;
+      width: 100%;
+      align-items: center;
+      color: white;
+      font-size: 3vw;
+      @include mobile-only {
+        width: 15vw;
+        align-content: flex-start;
+        font-size: 1vw;
+      }
+
+      & i {
+        box-sizing: border-box;
+        display: flex;
+        /*  background-color: rgb(255, 255, 255); */
+        border-radius: 50%;
+        transition: transform 100ms ease-in-out;
+        width: 3vh;
+        height: 3vh;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        padding: 3vh;
+        margin-top: 12px;
+        font-size: 18px;
         @include mobile-only {
-          width:15vw;
-          align-content:flex-start;
-          font-size:1vw;
-          
+          width: 4vh;
+          height: 4vh;
+          font-size: 5vw;
+          padding: 2vw;
         }
-        
-        
-  
-        & i {
-            box-sizing:border-box;
-            display:flex;
-            background-color: rgb(255, 255, 255);
-            border-radius: 50%;
-            transition: transform 100ms ease-in-out;
-            width:3vh;
-            height:3vh;
-            align-items:center;
-            justify-content:center;
-            color: rgb(21, 151, 202);
-            box-shadow:0.2vw 0.2vw 0.2vw lightgrey;
-            padding: 3vh;
-            margin-top: 2vw;
-            font-size: 2vw;
-            @include mobile-only {
-              width:4vh;
-            height:4vh;
-             font-size:5vw;
-            padding: 2vw;
-            }
-            border: 0.1rem solid rgb(21, 151, 202);
-            &:hover {
-                transform: scale(1.02);
-                color: $color-button-blog;
-            }
-          }
-          & p {
-            font-family: 'Lato';
-            margin: 0;
-            padding: 0;
-            font-size: 1vw;
-            @include mobile-only {
-              font-size: 2vw;
-            }
-          }
+        border: 0.1rem solid white;
+        &:hover {
+          transform: scale(1.02);
+          color: $color-button-blog;
+        }
+      }
+      & p {
+        font-family: "Lato";
+        margin: 0;
+        padding: 0;
+        font-size: 1vw;
+        @include mobile-only {
+          font-size: 2vw;
+        }
+      }
     }
   }
 }
 
 h1 {
-    
 }
 
 .logo {
-    height: 10vw;
-    width: 10vw;
-    border-radius: 50%;
-    font-size: 5vw;
-    line-height: 5vw;
-    background: linear-gradient(black, rgba(0, 0, 0, 0.493));
-    border: 0.3vw solid white;
-    vertical-align: middle;
-    display: flex;
-    justify-content: center; /* center items horizontally, in this case */
-    align-items: center;
-    font-family: "Raleway";
-    margin-right: 1vw;
-    margin-top : 2vw;
-    @include mobile-only {
-      font-size: 4.5vh;
-      margin-top: 2vh;
-      padding: 3vh;
-      z-index: 3;
-    }
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  font-size: 48px;
+  line-height: 60px;
+  background: linear-gradient(black, rgba(0, 0, 0, 0.493));
+  border: 0.3vw solid white;
+  vertical-align: middle;
+  display: flex;
+  justify-content: center; /* center items horizontally, in this case */
+  align-items: center;
+  font-family: "Raleway";
+  margin-right: 1vw;
+  @include mobile-only {
+    font-size: 4.5vh;
+    margin-top: 2vh;
+    padding: 3vh;
+    z-index: 3;
+  }
 }
 
 .load-screen {
-    /*display: flex;*/
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
-    background-color: $color-background-primary;
-    z-index: $maximum-index;
-    animation: hide-load-screen;
-    animation-delay: 2s;
-    animation-duration: 1s;
+  /*display: flex;*/
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: $color-background-primary;
+  z-index: $maximum-index;
+  animation: hide-load-screen;
+  animation-delay: 2s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
+.loader-spinner {
+  @include loader-element;
+  border-top: 2px solid $color-secondary;
+  border-bottom: 2px solid $color-secondary;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  animation: spin 2s linear 2;
+  animation-fill-mode: forwards;
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh;
+  display: flex;
+}
+
+.loader-label {
+  @include loader-element;
+  display: flex;
+  border-radius: 50%;
+  border: 2vh solid transparent;
+  width: 20vh;
+  height: 20vh;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 900;
+  background-color: transparent;
+  color: white;
+  font-family: "Raleway";
+  font-size: 5vw;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+
+  p {
+    margin: auto;
+    opacity: 0;
+    animation: fade-in-rotate 4s;
     animation-fill-mode: forwards;
   }
-  
-  .loader-spinner {
-    @include loader-element;
-    border-top: 2px solid $color-secondary;
-    border-bottom: 2px solid $color-secondary;
-    border-left: 2px solid white;
-    border-right: 2px solid white;
-    animation: spin 2s linear 2;
-    animation-fill-mode: forwards;
-    border-radius: 50%;
-    width: 20vh;
-    height: 20vh;
-    display:flex;
+}
 
-  }
-  
-  .loader-label {
-    @include loader-element;
-    display: flex;
-    border-radius: 50%;
-    border: 2vh solid transparent;
-    width: 20vh;
-    height: 20vh;
-    font-family: "Shrikhand", sans-serif;
-    font-weight: 900;
-    background-color: transparent;
-    color:white;
-    font-family: "Raleway";
-    font-size: 5vw;
-    flex-direction:row;
-    justify-content:center;
-    align-items:center;
-    box-sizing:border-box;
- 
-    p {
-      margin: auto;
-      opacity: 0;
-      animation: fade-in-rotate 4s;
-      animation-fill-mode: forwards;
-      
-    }
-  }
-
-
-  //loader used inside main content if the api takes some time to respond
-  .load-block {
-    background-color: transparent;
-    z-index: $maximum-index;
-    height: 30vw;
-    display: flex;
+//loader used inside main content if the api takes some time to respond
+.load-block {
+  background-color: transparent;
+  z-index: $maximum-index;
+  height: 30vw;
+  display: flex;
   align-items: center;
   justify-content: center;
-  }
-  
-  .loader-spinner-block {
-    @include loader-element-block;
-    border-top: 2vh solid $color-secondary;
-    border-bottom: 2vh solid $color-secondary;
-    border-left: 2vh solid white;
-    border-right: 2vh solid white;
-    animation: spin 2s linear 2;
+}
+
+.loader-spinner-block {
+  @include loader-element-block;
+  border-top: 2vh solid $color-secondary;
+  border-bottom: 2vh solid $color-secondary;
+  border-left: 2vh solid white;
+  border-right: 2vh solid white;
+  animation: spin 2s linear 2;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  border-radius: 50%;
+  width: 20vh;
+  height: 20vh;
+}
+
+.loader-label-block {
+  @include loader-element-block;
+  display: flex;
+  border-radius: 50%;
+  border: 2vh solid transparent;
+  width: 20vh;
+  height: 20vh;
+  font-family: "Shrikhand", sans-serif;
+  font-weight: 900;
+  font-size: 3vh;
+  background-color: transparent;
+  color: white;
+  font-family: "Raleway";
+  font-size: 5vw;
+  p {
+    margin: auto;
+    opacity: 0;
+    animation: fade-in-rotate 4s;
     animation-fill-mode: forwards;
     animation-iteration-count: infinite;
-    border-radius: 50%;
-    width: 20vh;
-    height: 20vh;
-    
-  }
-  
-  .loader-label-block {
-    @include loader-element-block;
-    display: flex;
-    border-radius: 50%;
-    border: 2vh solid transparent;
-    width: 20vh;
-    height: 20vh;
-    font-family: "Shrikhand", sans-serif;
-    font-weight: 900;
-    font-size: 3vh;
-    background-color: transparent;
-    color:white;
-    font-family: "Raleway";
-    font-size: 5vw;
-    p {
-      margin: auto;
-      opacity: 0;
-      animation: fade-in-rotate 4s;
-      animation-fill-mode: forwards;
-      animation-iteration-count: infinite;
-      & i {
-        color: $color-button-blog;
-      }
+    & i {
+      color: $color-button-blog;
     }
   }
-
-  
+}
