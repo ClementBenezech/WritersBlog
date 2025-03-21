@@ -95,8 +95,9 @@ body {
     /* border-right: 0.2vw solid rgb(201, 37, 37); */
     flex-wrap: nowrap;
     max-height: 10vh;
+    width: min-content;
 
-    margin: 0 auto;
+    margin: 0;
     overflow: visible;
 
     @include mobile-only {

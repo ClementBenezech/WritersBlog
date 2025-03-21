@@ -229,7 +229,8 @@ body {
     /* border-right: 0.2vw solid rgb(201, 37, 37); */
     flex-wrap: nowrap;
     max-height: 10vh;
-    margin: 0 auto;
+    width: min-content;
+    margin: 0;
     overflow: visible; }
     @media screen and (max-width: 1080px) {
       .main-content__title-container {
@@ -1126,10 +1127,10 @@ body {
       font-size: 13px;
       line-height: 20px;
       border-radius: 0;
-      background: rgba(255, 255, 255, 0.1);
+      background: white;
       padding: 12px;
       padding-top: 2vh;
-      color: white;
+      color: black;
       text-shadow: none;
       position: relative;
       animation: coming-from-right 0.2s ease-in-out forwards;
@@ -1139,7 +1140,6 @@ body {
       text-align: justify;
       white-space: pre-line;
       display: inline;
-      color: white;
       width: calc(100% - 24px); }
       @media screen and (max-width: 1080px) {
         .blog__element__synopsis {

@@ -277,10 +277,10 @@
       font-size: 13px;
       line-height: 20px;
       border-radius: 0;
-      background: rgba(255, 255, 255, 0.1);
+      background: white;
       padding: 12px;
       padding-top: 2vh;
-      color: white;
+      color: black;
       text-shadow: none;
       position: relative;
       animation: coming-from-right 0.2s ease-in-out forwards;
@@ -290,7 +290,6 @@
       text-align: justify;
       white-space: pre-line;
       display: inline;
-      color: rgb(255, 255, 255);
       width: calc(100% - 24px);
 
       @include mobile-only {
